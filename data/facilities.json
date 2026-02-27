@@ -1,35 +1,6 @@
 [
   {
     "id": "abqaiq-nature-reserve",
-    "area": "oasis",
-    "name": "Abqaiq Nature Reserve",
-    "category": "Nature",
-    "status": "Operating",
-    "operating_days": "7 days",
-    "open_time": "7:00 AM",
-    "close_time": "10:30 PM",
-    "purpose": "Biodiversity Garden",
-    "purpose_category": "Conservation",
-    "description": "A protected area showcasing native plants and wildlife with walking paths and educational signage.",
-    "address": "Abqaiq, Eastern Province, Saudi Arabia",
-    "lat": "25.9340",
-    "lng": "49.6680",
-    "photo": "/images/placeholders/card.jpg",
-    "photos": [
-      "/images/placeholders/card.jpg",
-      "/images/placeholders/gallery1.jpg",
-      "/images/placeholders/gallery2.jpg"
-    ],
-    "amenities": [
-      "Parking",
-      "Accessible paths",
-      "Information boards"
-    ],
-    "phone": "+966 00 000 0000",
-    "email": "info@example.com",
-    "booking": "#" [
-  {
-    "id": "abqaiq-nature-reserve",
     "area": "main-camp",
     "name": "Abqaiq Nature Reserve",
     "category": "Nature",
