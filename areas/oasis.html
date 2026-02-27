@@ -1,0 +1,109 @@
+
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Oasis Recreation Zone</title>
+  <meta name="description" content="Abqaiq Recreation Services — facilities, activities, and experiences across our community." />
+  <meta property="og:title" content="Oasis Recreation Zone" />
+  <meta property="og:description" content="Abqaiq Recreation Services — facilities, activities, and experiences across our community." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/images/og-image.jpg" />
+  <link rel="icon" href="/images/favicon.ico" />
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="/index.html">Abqaiq Recreation</a>
+    <nav class="main-nav" aria-label="Primary">
+      <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="navMenu">☰</button>
+      <ul id="navMenu" class="nav-menu">
+        <li><a href="/index.html">Home</a></li>
+        <li class="has-sub">
+          <a href="/areas.html">Areas</a>
+          <ul class="submenu">
+            <li><a href="/areas/main-camp.html">Main Camp</a></li>
+            <li><a href="/areas/al-farhah.html">Al Farhah</a></li>
+            <li><a href="/areas/al-saadah.html">Al Sa’adah</a></li>
+            <li><a href="/areas/oasis.html">Oasis</a></li>
+            <li><a href="/areas/beaches.html">Beaches</a></li>
+          </ul>
+        </li>
+        <li class="has-sub">
+          <a href="#">Categories</a>
+          <ul class="submenu">
+            <li><a href="/categories.html#fitness">Fitness</a></li>
+            <li><a href="/categories.html#sports">Sports</a></li>
+            <li><a href="/categories.html#parks">Parks</a></li>
+            <li><a href="/categories.html#aquatics">Aquatics</a></li>
+            <li><a href="/categories.html#entertainment">Entertainment</a></li>
+            <li><a href="/categories.html#nature">Nature</a></li>
+          </ul>
+        </li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main class="area-page container">
+    <section class="area-hero">
+      <div class="area-hero-img oasis" role="img" aria-label="Oasis banner image"></div>
+      <div class="area-hero-overlay"></div>
+      <div class="area-hero-content">
+        <h1>Oasis Recreation Zone</h1>
+      </div>
+    </section>
+    <section class="area-overview">
+      <h2>Overview</h2>
+      <p>Oasis is a calm green area with walking paths and nature-focused experiences.</p>
+    </section>
+    <section class="filters" aria-label="Facility filters">
+      <button class="chip" data-filter="all" aria-pressed="true">All</button>
+      <button class="chip" data-filter="Fitness">Fitness</button>
+      <button class="chip" data-filter="Sports">Sports</button>
+      <button class="chip" data-filter="Parks">Parks</button>
+      <button class="chip" data-filter="Aquatics">Aquatics</button>
+      <button class="chip" data-filter="Entertainment">Entertainment</button>
+      <button class="chip" data-filter="Nature">Nature</button>
+    </section>
+    <section class="facility-grid" id="facilityGrid" data-area="oasis">
+      <!-- Cards injected by JS from data/facilities.json -->
+    </section>
+  </main>
+    
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div>
+        <h4>About Recreation Services</h4>
+        <p>Serving the Abqaiq community with safe, inclusive, and memorable experiences.</p>
+      </div>
+      <div>
+        <h4>Policies</h4>
+        <ul>
+          <li><a href="#">Terms of Use</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Emergency Contacts</h4>
+        <ul>
+          <li><a href="tel:+966000000000">Emergency: +966 00 000 0000</a></li>
+          <li><a href="tel:+966000000001">Security: +966 00 000 0001</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Follow Us</h4>
+        <p>
+          <a href="#" aria-label="Instagram">Instagram</a> ·
+          <a href="#" aria-label="X">X</a> ·
+          <a href="#" aria-label="Facebook">Facebook</a>
+        </p>
+      </div>
+    </div>
+    <p class="copyright">© 2026 Abqaiq Recreation Services</p>
+  </footer>
+  <script src="/js/main.js"></script>
+  <script src="/js/area.js"></script>
+</body>
+</html>
