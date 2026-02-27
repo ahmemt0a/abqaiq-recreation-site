@@ -189,6 +189,7 @@
     "photos": ["/images/placeholders/card.jpg"],
     "amenities": []
   },
+
   {
     "id": "al-saadah-basketball-court",
     "area": "al-saadah",
@@ -322,6 +323,7 @@
     "photos": ["/images/placeholders/card.jpg"],
     "amenities": []
   },
+
   {
     "id": "cricket-field-main-camp",
     "area": "main-camp",
@@ -455,6 +457,7 @@
     "photos": ["/images/placeholders/card.jpg"],
     "amenities": []
   },
+
   {
     "id": "oasis-crossfit-studio",
     "area": "oasis",
@@ -493,8 +496,7 @@
     "photos": ["/images/placeholders/card.jpg"],
     "amenities": []
   },
-  {
- [
+
   {
     "id": "oasis-kids-hub",
     "area": "oasis",
@@ -590,6 +592,7 @@
     "photos": ["/images/placeholders/card.jpg"],
     "amenities": []
   },
+
   {
     "id": "qurrayah-beach",
     "area": "beaches",
