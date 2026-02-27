@@ -649,5 +649,24 @@
     "photo": "/images/placeholders/card.jpg",
     "photos": ["/images/placeholders/card.jpg"],
     "amenities": []
-  }
+  },
+{
+  "id": "debug-test-card",
+  "area": "oasis",
+  "name": "Debug Test Card",
+  "category": "Entertainment",
+  "status": "Operating",
+  "operating_days": "7 days",
+  "open_time": "7:00 AM",
+  "close_time": "10:30 PM",
+  "purpose": "Test",
+  "purpose_category": "Test",
+  "description": "Temporary card to verify grid rendering.",
+  "address": "Oasis Complex",
+  "lat": "25.94",
+  "lng": "49.67",
+  "photo": "/images/placeholders/card.jpg",
+  "photos": ["/images/placeholders/card.jpg"],
+  "amenities": []
+}
 ]
