@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Main Camp Recreation Zone</title>
+  <title>Categories — Abqaiq Recreation</title>
   <meta name="description" content="Abqaiq Recreation Services — facilities, activities, and experiences across our community." />
-  <meta property="og:title" content="Main Camp Recreation Zone" />
+  <meta property="og:title" content="Categories — Abqaiq Recreation" />
   <meta property="og:description" content="Abqaiq Recreation Services — facilities, activities, and experiences across our community." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="/images/og-image.jpg" />
@@ -46,32 +46,18 @@
     </nav>
   </header>
   
-  <main class="area-page container">
-    <section class="area-hero">
-      <div class="area-hero-img main-camp" role="img" aria-label="Main Camp banner image"></div>
-      <div class="area-hero-overlay"></div>
-      <div class="area-hero-content">
-        <h1>Main Camp Recreation Zone</h1>
-      </div>
-    </section>
-    <section class="area-overview">
-      <h2>Overview</h2>
-      <p>Main Camp is the heart of Abqaiq Recreation, offering parks, sports fields, fitness centers, and nature spaces for all ages.</p>
-    </section>
-    <section class="filters" aria-label="Facility filters">
-      <button class="chip" data-filter="all" aria-pressed="true">All</button>
-      <button class="chip" data-filter="Fitness">Fitness</button>
-      <button class="chip" data-filter="Sports">Sports</button>
-      <button class="chip" data-filter="Parks">Parks</button>
-      <button class="chip" data-filter="Aquatics">Aquatics</button>
-      <button class="chip" data-filter="Entertainment">Entertainment</button>
-      <button class="chip" data-filter="Nature">Nature</button>
-    </section>
-    <section class="facility-grid" id="facilityGrid" data-area="main-camp">
-      <!-- Cards injected by JS from data/facilities.json -->
-    </section>
+  <main class="container">
+    <header class="page-header"><h1>Categories</h1><p>Browse by type of experience.</p></header>
+    <ul class="category-list">
+      <li><a href="/areas.html#fitness" class="chip">Fitness</a></li>
+      <li><a href="/areas.html#sports" class="chip">Sports</a></li>
+      <li><a href="/areas.html#parks" class="chip">Parks</a></li>
+      <li><a href="/areas.html#aquatics" class="chip">Aquatics</a></li>
+      <li><a href="/areas.html#entertainment" class="chip">Entertainment</a></li>
+      <li><a href="/areas.html#nature" class="chip">Nature</a></li>
+    </ul>
   </main>
-    
+
   <footer class="site-footer">
     <div class="footer-grid">
       <div>
@@ -104,6 +90,6 @@
     <p class="copyright">© 2026 Abqaiq Recreation Services</p>
   </footer>
   <script src="/js/main.js"></script>
-  <script src="/js/area.js"></script>
+  
 </body>
 </html>

@@ -5,6 +5,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Facility — Abqaiq Recreation</title>
+  <meta name="description" content="Abqaiq Recreation Services — facilities, activities, and experiences across our community." />
+  <meta property="og:title" content="Facility — Abqaiq Recreation" />
+  <meta property="og:description" content="Abqaiq Recreation Services — facilities, activities, and experiences across our community." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/images/og-image.jpg" />
+  <link rel="icon" href="/images/favicon.ico" />
   <link rel="stylesheet" href="/css/styles.css" />
 </head>
 <body>
@@ -14,99 +20,121 @@
       <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="navMenu">☰</button>
       <ul id="navMenu" class="nav-menu">
         <li><a href="/index.html">Home</a></li>
-        <li><a href="/areas.html">Areas</a></li>
-        <li><a href="/categories.html">Categories</a></li>
+        <li class="has-sub">
+          <a href="/areas.html">Areas</a>
+          <ul class="submenu">
+            <li><a href="/areas/main-camp.html">Main Camp</a></li>
+            <li><a href="/areas/al-farhah.html">Al Farhah</a></li>
+            <li><a href="/areas/al-saadah.html">Al Sa’adah</a></li>
+            <li><a href="/areas/oasis.html">Oasis</a></li>
+            <li><a href="/areas/beaches.html">Beaches</a></li>
+          </ul>
+        </li>
+        <li class="has-sub">
+          <a href="#">Categories</a>
+          <ul class="submenu">
+            <li><a href="/categories.html#fitness">Fitness</a></li>
+            <li><a href="/categories.html#sports">Sports</a></li>
+            <li><a href="/categories.html#parks">Parks</a></li>
+            <li><a href="/categories.html#aquatics">Aquatics</a></li>
+            <li><a href="/categories.html#entertainment">Entertainment</a></li>
+            <li><a href="/categories.html#nature">Nature</a></li>
+          </ul>
+        </li>
         <li><a href="/contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
+  
+<main class="facility-page container" id="facilityPage">
+  <article>
+    <header class="facility-header">
+      <div class="facility-hero">
+        <img id="facilityHero" src="/images/placeholders/facility-hero.jpg" alt="Facility photo" />
+      </div>
+      <div class="facility-title">
+        <h1 id="facilityName">Facility Name</h1>
+        <p class="category" id="facilityCategory">Category</p>
+      </div>
+    </header>
 
-  <main class="facility-page container" id="facilityPage">
-    <article>
-      <header class="facility-header">
-        <div class="facility-hero">
-          <img id="facilityHero" src="/images/placeholders/facility-hero.jpg" alt="Facility photo" />
-        </div>
-        <div class="facility-title">
-          <h1 id="facilityName">Facility Name</h1>
-          <p class="category" id="facilityCategory">Category</p>
-        </div>
-      </header>
+    <section class="quick-facts">
+      <h2>Quick Facts</h2>
+      <ul>
+        <li><strong>Status:</strong> <span id="facilityStatus">Operating</span></li>
+        <li><strong>Operating Days:</strong> <span id="facilityDays">—</span></li>
+        <li><strong>Opening Time:</strong> <span id="facilityOpen">—</span></li>
+        <li><strong>Closing Time:</strong> <span id="facilityClose">—</span></li>
+      </ul>
+    </section>
 
-      <section class="quick-facts">
-        <h2>Quick Facts</h2>
-        <ul>
-          <li><strong>Status:</strong> <span id="facilityStatus">—</span></li>
-          <li><strong>Operation Type:</strong> <span id="facilityOpType">—</span></li>
-          <li><strong>Operation Period:</strong> <span id="facilityOpPeriod">—</span></li>
-          <li><strong>Operating Days:</strong> <span id="facilityDays">—</span></li>
-          <li><strong>Opening (Weekdays):</strong> <span id="facilityOpen">—</span> – <span id="facilityClose">—</span></li>
-          <li><strong>Friday:</strong> <span id="friOpen">—</span> – <span id="friClose">—</span></li>
-          <li><strong>Saturday:</strong> <span id="satOpen">—</span> – <span id="satClose">—</span></li>
-        </ul>
-      </section>
+    <section class="facility-description">
+      <h2>Description</h2>
+      <p><strong>Purpose:</strong> <span id="facilityPurpose">—</span></p>
+      <p><strong>Purpose Category:</strong> <span id="facilityPurposeCategory">—</span></p>
+      <p id="facilityLongDesc">—</p>
+    </section>
 
-      <section class="facility-description">
-        <h2>Description</h2>
-        <p><strong>Purpose:</strong> <span id="facilityPurpose">—</span></p>
-        <p><strong>Purpose Category:</strong> <span id="facilityPurposeCategory">—</span></p>
-        <p id="facilityLongDesc">—</p>
-      </section>
+    <section class="facility-location">
+      <h2>Location</h2>
+      <p id="facilityAddress">—</p>
+      <p><span id="facilityLat">—</span>, <span id="facilityLng">—</span></p>
+      <div class="map-embed" id="mapEmbed" aria-label="Google Map embed"></div>
+    </section>
 
-      <section class="facility-location">
-        <h2>Location</h2>
-        <p id="facilityAddress">—</p>
-        <p><span id="facilityLat">—</span>, <span id="facilityLng">—</span></p>
-        <div class="map-embed" id="mapEmbed" aria-label="Google Map embed"></div>
-      </section>
+    <section class="facility-gallery">
+      <h2>Gallery</h2>
+      <div class="gallery-grid" id="facilityGallery"></div>
+    </section>
 
-      <section class="facility-gallery">
-        <h2>Gallery</h2>
-        <div class="gallery-grid" id="facilityGallery"></div>
-      </section>
+    <section class="facility-amenities">
+      <h2>Amenities & Services</h2>
+      <ul id="facilityAmenities"></ul>
+    </section>
 
-      <section class="facility-amenities">
-        <h2>Amenities & Services</h2>
-        <ul id="facilityAmenities"></ul>
-      </section>
-
-      <section class="facility-contact">
-        <h2>Contact</h2>
-        <ul>
-          <li><strong>Phone:</strong> <a id="facilityPhone" href="#">—</a></li>
-          <li><strong>Email:</strong> <a id="facilityEmail" href="#">—</a></li>
-          <li><strong>Booking:</strong> <a id="facilityBooking" href="#">—</a></li>
-        </ul>
-      </section>
-    </article>
-  </main>
+    <section class="facility-contact">
+      <h2>Contact</h2>
+      <ul>
+        <li><strong>Phone:</strong> <a id="facilityPhone" href="#">—</a></li>
+        <li><strong>Email:</strong> <a id="facilityEmail" href="#">—</a></li>
+        <li><strong>Booking:</strong> <a id="facilityBooking" href="#">—</a></li>
+      </ul>
+    </section>
+  </article>
+</main>
 
   <footer class="site-footer">
     <div class="footer-grid">
       <div>
         <h4>About Recreation Services</h4>
-        <p>Serving the community with safe, inclusive, and memorable experiences.</p>
+        <p>Serving the Abqaiq community with safe, inclusive, and memorable experiences.</p>
       </div>
       <div>
-        <h4>Operation Manuals/h4>
+        <h4>Policies</h4>
         <ul>
-          <li><a href="#">Recreation Operation Manual</a></li>
+          <li><a href="#">Terms of Use</a></li>
           <li><a href="#">Privacy Policy</a></li>
         </ul>
       </div>
       <div>
-        <h4>For Assistance</h4>
+        <h4>Emergency Contacts</h4>
         <ul>
-          <li><a href="tel:+966000000000">Telephone: +966 13 572 0878</a></li>
-          <li><a href="emailto:AbqRecEventsCoordTeam@aramco.com">Abq Rec Events Coord Team</a></li>
-          </ul>
+          <li><a href="tel:+966000000000">Emergency: +966 00 000 0000</a></li>
+          <li><a href="tel:+966000000001">Security: +966 00 000 0001</a></li>
+        </ul>
       </div>
       <div>
+        <h4>Follow Us</h4>
+        <p>
+          <a href="#" aria-label="Instagram">Instagram</a> ·
+          <a href="#" aria-label="X">X</a> ·
+          <a href="#" aria-label="Facebook">Facebook</a>
+        </p>
       </div>
     </div>
     <p class="copyright">© 2026 Abqaiq Recreation Services</p>
   </footer>
-
+  <script src="/js/main.js"></script>
   <script src="/js/facility.js"></script>
 </body>
 </html>
