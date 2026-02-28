@@ -1,17 +1,93 @@
-
 <!doctype html>
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Abqaiq Recreation — Areas</title>
-  <meta name="description" content="Abqaiq Recreation Services — facilities, activities, and experiences across our community." />
-  <meta property="og:title" content="Abqaiq Recreation — Areas" />
-  <meta property="og:description" content="Abqaiq Recreation Services — facilities, activities, and experiences across our community." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="/images/og-image.jpg" />
-  <link rel="icon" href="/images/favicon.ico" />
+  <meta name="description" content="Choose an area to browse its facilities." />
   <link rel="stylesheet" href="/css/styles.css" />
+  <style>
+    /* --- Areas hub redesign (scoped tweaks) --- */
+    .areas-hero {
+      background: linear-gradient(135deg,#e0f2fe,#ecfccb);
+      border-radius: 14px;
+      padding: 32px 18px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.08);
+      margin: 16px 0 24px;
+      text-align: center;
+    }
+    .areas-hero h1 { margin: 0 0 6px; }
+    .areas-hero p { margin: 4px 0 0; color:#475569 }
+
+    .zones-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(220px, 1fr));
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    @media (max-width: 900px){
+      .zones-row { grid-template-columns: repeat(2, minmax(200px, 1fr)); }
+    }
+    @media (max-width: 600px){
+      .zones-row { grid-template-columns: 1fr; }
+    }
+
+    .zone-card {
+      position: relative;
+      background:#fff;
+      border-radius: 14px;
+      padding: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.08);
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+      transition: transform .15s ease, box-shadow .15s ease;
+      min-height: 116px;
+    }
+    .zone-card:focus-within,
+    .zone-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 36px rgba(0,0,0,.12);
+    }
+
+    .zone-icon {
+      width:44px; height:44px; border-radius:10px;
+      display:flex; align-items:center; justify-content:center;
+      background:#e0f2fe; color:#0ea5e9; font-weight:700;
+      flex: 0 0 44px;
+    }
+    .zone-body h3 { margin:0 0 4px; font-size:1.05rem }
+    .zone-body p { margin:0; color:#64748b; font-size:.95rem }
+
+    .zone-actions {
+      margin-top:10px; display:flex; gap:10px; flex-wrap:wrap;
+    }
+    .btn-pill {
+      display:inline-block; text-decoration:none;
+      padding:8px 12px; border-radius:999px; border:1px solid #cbd5e1;
+      color:#0f172a; background:#fff;
+    }
+    .btn-pill.primary { background:#0ea5e9; color:#fff; border-color:#0ea5e9; }
+    .btn-pill:hover { filter: brightness(0.95); }
+
+    .row-label {
+      display:flex; align-items:center; gap:8px; color:#475569; margin:6px 0 10px;
+      font-weight:600; letter-spacing:.2px;
+    }
+    .row-label .dot { width:8px; height:8px; background:#22c55e; border-radius:50%; display:inline-block; }
+
+    /* Row2 starts hidden until trigger is pressed */
+    .row2-wrap {
+      display:none; /* revealed by JS */
+      animation: fadeIn .25s ease-out both;
+    }
+    @keyframes fadeIn { from {opacity:0; transform: translateY(4px);} to {opacity:1; transform:none;} }
+
+    /* “Reveal” hint under Abqaiq Sr. Camp */
+    .hint {
+      font-size:.85rem; color:#0ea5e9; margin-top:6px;
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -20,111 +96,183 @@
       <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="navMenu">☰</button>
       <ul id="navMenu" class="nav-menu">
         <li><a href="/index.html">Home</a></li>
-        <li class="has-sub">
-          <a href="/areas.html">Areas</a>
-          <ul class="submenu">
-            <li><a href="/areas/main-camp.html">Main Camp</a></li>
-            <li><a href="/areas/al-farhah.html">Al Farhah</a></li>
-            <li><a href="/areas/al-saadah.html">Al Sa’adah</a></li>
-            <li><a href="/areas/oasis.html">Oasis</a></li>
-            <li><a href="/areas/beaches.html">Beaches</a></li>
-          </ul>
-        </li>
-        <li class="has-sub">
-          <a href="#">Categories</a>
-          <ul class="submenu">
-            <li><a href="/categories.html#fitness">Fitness</a></li>
-            <li><a href="/categories.html#sports">Sports</a></li>
-            <li><a href="/categories.html#parks">Parks</a></li>
-            <li><a href="/categories.html#aquatics">Aquatics</a></li>
-            <li><a href="/categories.html#entertainment">Entertainment</a></li>
-            <li><a href="/categories.html#nature">Nature</a></li>
-          </ul>
-        </li>
+        <li><a class="active" href="/areas.html">Areas</a></li>
+        <li><a href="/categories.html">Categories</a></li>
         <li><a href="/contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
-  
-<main class="areas-hub container">
-  <header class="page-header">
-    <h1>Choose an Area</h1>
-    <p>Select a zone to browse its facilities.</p>
-  </header>
 
-  <section class="map-wrap">
-    <div class="map-legend" aria-hidden="true">
-      <span class="badge main-camp">Main Camp</span>
-      <span class="badge al-farhah">Al Farhah</span>
-      <span class="badge al-saadah">Al Sa’adah</span>
-      <span class="badge oasis">Oasis</span>
-      <span class="badge beaches">Beaches</span>
-    </div>
-    <svg class="area-map" viewBox="0 0 800 500" role="img" aria-label="Map of Abqaiq Recreation zones">
-      <!-- Simple illustrative shapes as placeholders -->
-      <a xlink:href="/areas/main-camp.html">
-        <rect id="main-camp" x="60" y="80" width="220" height="140" class="zone main-camp" />
-        <text x="170" y="155" class="zone-label">Main Camp</text>
-      </a>
-      <a xlink:href="/areas/al-farhah.html">
-        <circle id="al-farhah" cx="520" cy="130" r="90" class="zone al-farhah" />
-        <text x="520" y="130" class="zone-label">Al Farhah</text>
-      </a>
-      <a xlink:href="/areas/al-saadah.html">
-        <rect id="al-saadah" x="300" y="260" width="180" height="110" class="zone al-saadah" />
-        <text x="390" y="315" class="zone-label">Al Sa’adah</text>
-      </a>
-      <a xlink:href="/areas/oasis.html">
-        <ellipse id="oasis" cx="150" cy="330" rx="110" ry="70" class="zone oasis" />
-        <text x="150" y="330" class="zone-label">Oasis</text>
-      </a>
-      <a xlink:href="/areas/beaches.html">
-        <path id="beaches" d="M640,260 q60,20 80,70 q-30,60 -120,90 q-40,10 -60,-10 q50,-70 100,-150 z" class="zone beaches" />
-        <text x="690" y="340" class="zone-label">Beaches</text>
-      </a>
-    </svg>
-    <div class="map-buttons">
-      <a class="btn" href="/areas/main-camp.html">Main Camp</a>
-      <a class="btn" href="/areas/al-farhah.html">Al Farhah</a>
-      <a class="btn" href="/areas/al-saadah.html">Al Sa’adah</a>
-      <a class="btn" href="/areas/oasis.html">Oasis</a>
-      <a class="btn" href="/areas/beaches.html">Beaches</a>
-    </div>
-  </section>
-</main>
+  <main class="container">
+    <section class="areas-hero" aria-labelledby="areasTitle">
+      <h1 id="areasTitle">Areas of Recreation Services</h1>
+      <p>Explore our Operation and Facilities based on their location, Select a zone to browse its facilities.</p>
+    </section>
 
-  <footer class="site-footer">
+    <!-- Row 1 -->
+    <div class="row-label"><span class="dot"></span> Row 1 — Primary Zones</div>
+    <section class="zones-row" aria-label="Row 1 zones">
+      <!-- Al Farhah Bachelor Camp -->
+      <article class="zone-card" role="region" aria-labelledby="z-farhah">
+        <div class="zone-icon" aria-hidden="true">AF</div>
+        <div class="zone-body">
+          <h3 id="z-farhah">Al Farhah Bachelor Camp</h3>
+          <p>Library, gyms, sports ground, indoor & outdoor courts, aquatics, and parks; everyday recreation for for junior bachelor employees and bachelor trainees, with all amenities.</p>
+          <div class="zone-actions">
+            <a class="btn-pill primary" href="/areas/al-farhah.html">Open Area</a>
+            <a class="btn-pill" href="/categories.html#sports">Sports</a>
+            <a class="btn-pill" href="/categories.html#aquatics">Aquatics</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Abqaiq Sr. Camp (reveals Row 2) -->
+      <article class="zone-card" role="region" aria-labelledby="z-sr">
+        <div class="zone-icon" aria-hidden="true">SR</div>
+        <div class="zone-body">
+          <h3 id="z-sr">Abqaiq Sr. Camp</h3>
+          <p>Tap below to view sub‑zones (Oasis, Al Sa’adah, Other Recreation).</p>
+          <div class="zone-actions">
+            <button id="revealRow2" class="btn-pill primary" type="button" aria-controls="row2" aria-expanded="false">
+              Show Sub‑Zones
+            </button>
+            <div class="hint" id="revealHint">Reveals Oasis, Al Sa’adah, Other Rec</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Beaches -->
+      <article class="zone-card" role="region" aria-labelledby="z-beaches">
+        <div class="zone-icon" aria-hidden="true">BC</div>
+        <div class="zone-body">
+          <h3 id="z-beaches">Beaches</h3>
+          <p>Qurayyah & Uqair—family time by the coast, seasonal programs.</p>
+          <div class="zone-actions">
+            <a class="btn-pill primary" href="/areas/beaches.html">Open Area</a>
+            <a class="btn-pill" href="/facility.html?id=qurrayah-beach">Qurayyah</a>
+            <a class="btn-pill" href="/facility.html?id=uqair-beach">Uqair</a>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- Row 2 (revealed from Abqaiq Sr. Camp) -->
+    <div class="row-label" id="row2Label" style="display:none;"><span class="dot"></span> Row 2 — Sub‑Zones of Abqaiq Sr. Camp</div>
+    <section id="row2" class="zones-row row2-wrap" aria-label="Row 2 zones" hidden>
+      <!-- Oasis Recreation Complex -->
+      <article class="zone-card" role="region" aria-labelledby="z-oasis">
+        <div class="zone-icon" aria-hidden="true">OA</div>
+        <div class="zone-body">
+          <h3 id="z-oasis">Oasis Recreation Complex</h3>
+          <p>A complete recreation complex. featuring a spacious dining hall, a lively games hub, a peaceful lounge, seminar hall, exercise rooms, pools and a vibrant Kids’ hub. Thoughtfully designed for relaxation, socialization, and entertainment for all ages.</p>
+          <div class="zone-actions">
+            <a class="btn-pill primary" href="/areas/oasis.html">Open Area</a>
+            <a class="btn-pill" href="/facility.html?id=oasis-crossfit-studio">CrossFit</a>
+            <a class="btn-pill" href="/facility.html?id=oasis-ladies-gym">Ladies Gym</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Al Sa’adah Recreation Complex -->
+      <article class="zone-card" role="region" aria-labelledby="z-saadah">
+        <div class="zone-icon" aria-hidden="true">AS</div>
+        <div class="zone-body">
+          <h3 id="z-saadah">Al Sa’adah Recreation Complex</h3>
+          <p>A complete recreation complex. featuring an entertaining bowling alley, a swimming pool for families, outdoor courts for tennis, padel, basket ball, soccer and track field, exercise & aerobics room. Thoughtfully designed for relaxation, socialization, and entertainment for all ages.</p>
+          <div class="zone-actions">
+            <a class="btn-pill primary" href="/areas/al-saadah.html">Open Area</a>
+            <a class="btn-pill" href="/facility.html?id=al-saadah-padel-court">Padel</a>
+            <a class="btn-pill" href="/facility.html?id=al-saadah-bowling-alley">Bowling</a>
+          </div>
+        </div>
+      </article>
+
+ <!-- Biodiversity Parks -->
+      <article class="zone-card" role="region" aria-labelledby="z-biodiversity">
+        <div class="zone-icon" aria-hidden="true">AS</div>
+        <div class="zone-body">
+          <h3 id="z-biodiversity">Biodiversity Parks</h3>
+          <p>Explore Aramco’s first community based sanctuary and the stunning natural paradise, these are home to native gazelles, oryx, ostriches, and over 2,500 colorful birds and plants.</p>
+          <div class="zone-actions">
+            <a class="btn-pill primary" href="/areas/Biodiversity.html">Open Area</a>
+            <a class="btn-pill" href="/facility.html?id=al-abqiq-nature-resrve">Nature</a>
+            <a class="btn-pill" href="/facility.html?id=abqaiqs-heaven">Heaven</a>
+          </div>
+        </div>
+      </article>
+
+
+      <!-- Other Recreation Facilities -->
+      <article class="zone-card" role="region" aria-labelledby="z-other">
+        <div class="zone-icon" aria-hidden="true">OR</div>
+        <div class="zone-body">
+          <h3 id="z-other">Other Recreation Facilities</h3>
+          <p>There are more facilities around the community to explore such as Golf course, driving range, parks, stables, winter tent, and more.</p>
+          <div class="zone-actions">
+            <a class="btn-pill primary" href="/areas/main-camp.html">Open Area</a>
+            <a class="btn-pill" href="/facility.html?id=golf-course">Golf</a>
+            <a class="btn-pill" href="/facility.html?id=khuzama-park">Park</a>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+<footer class="site-footer">
     <div class="footer-grid">
       <div>
         <h4>About Recreation Services</h4>
-        <p>Serving the Abqaiq community with safe, inclusive, and memorable experiences.</p>
+        <p>Serving the community with safe, inclusive, and memorable experiences.</p>
       </div>
       <div>
-        <h4>Policies</h4>
+        <h4>Operation Manuals/h4>
         <ul>
-          <li><a href="#">Terms of Use</a></li>
+          <li><a href="#">Recreation Operation Manual</a></li>
           <li><a href="#">Privacy Policy</a></li>
         </ul>
       </div>
       <div>
-        <h4>Emergency Contacts</h4>
+        <h4>For Assistance</h4>
         <ul>
-          <li><a href="tel:+966000000000">Emergency: +966 00 000 0000</a></li>
-          <li><a href="tel:+966000000001">Security: +966 00 000 0001</a></li>
+          <li><a href="tel:+966000000000">Telephone: +966 13 572 0878</a></li>
+          <li><a href="mailto:30004062.ABQRECEVENTSCOORDTEAM@Exchange.Aramco.com.sa">eMail: Abq Rec Events Coord Team</a></li>
         </ul>
       </div>
       <div>
-        <h4>Follow Us</h4>
-        <p>
-          <a href="#" aria-label="Instagram">Instagram</a> ·
-          <a href="#" aria-label="X">X</a> ·
-          <a href="#" aria-label="Facebook">Facebook</a>
-        </p>
       </div>
     </div>
     <p class="copyright">© 2026 Abqaiq Recreation Services</p>
   </footer>
+
+
   <script src="/js/main.js"></script>
-  <script src="/js/map.js"></script>
+  <script>
+    // Reveal Row 2 when the Abqaiq Sr. Camp button is clicked
+    (function(){
+      const btn = document.getElementById('revealRow2');
+      const row2 = document.getElementById('row2');
+      const row2Label = document.getElementById('row2Label');
+      const hint = document.getElementById('revealHint');
+      if(!btn || !row2) return;
+
+      btn.addEventListener('click', () => {
+        const nowOpen = row2.hasAttribute('hidden');
+        if(nowOpen){
+          row2.removeAttribute('hidden');
+          row2.style.display = 'grid';
+          row2Label.style.display = 'flex';
+          btn.setAttribute('aria-expanded', 'true');
+          if(hint) hint.textContent = 'Showing sub‑zones below';
+          row2.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
+          row2.setAttribute('hidden','');
+          row2.style.display = 'none';
+          row2Label.style.display = 'none';
+          btn.setAttribute('aria-expanded', 'false');
+          if(hint) hint.textContent = 'Reveals Oasis, Al Sa’adah, Biodiversity, Other Rec';
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
