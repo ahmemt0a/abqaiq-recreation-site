@@ -22,9 +22,11 @@
     "address": "10th Street, Main Camp, Abqaiq, Saudi Aramco",
     "lat": "25.954939",
     "lng": "49.676877",
-    "photo": "/images/placeholders/card.jpg",
+    "photo": "/images/facilities/abqaiq-nature-reserve/cover.jpg",
     "photos": [
-      "/images/placeholders/card.jpg"
+    "/images/facilities/abqaiq-nature-reserve/cover.jpg",
+    "/images/facilities/abqaiq-nature-reserve/gallery-1.jpg",
+    "/images/facilities/abqaiq-nature-reserve/gallery-2.jpg"
     ],
     "amenities": []
   },
