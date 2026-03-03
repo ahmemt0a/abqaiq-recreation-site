@@ -44,8 +44,8 @@
       transition: transform .15s ease, box-shadow .15s ease;
       min-height: 116px;
     }
-    .zone-card:hover,
-    .zone-card:focus-within {
+    .zone-card:focus-within,
+    .zone-card:hover {
       transform: translateY(-2px);
       box-shadow: 0 14px 36px rgba(0,0,0,.12);
     }
@@ -84,7 +84,9 @@
     @keyframes fadeIn { from {opacity:0; transform: translateY(4px);} to {opacity:1; transform:none;} }
 
     /* “Reveal” hint under Abqaiq Sr. Camp */
-    .hint { font-size:.85rem; color:#0ea5e9; margin-top:6px; }
+    .hint {
+      font-size:.85rem; color:#0ea5e9; margin-top:6px;
+    }
   </style>
 </head>
 <body>
@@ -103,8 +105,8 @@
 
   <main class="container">
     <section class="areas-hero" aria-labelledby="areasTitle">
-      <h1 id="areasTitle">Areas of Recreation Services</h1>
-      <p>Explore our Operation and Facilities based on their location. Select a zone to browse its facilities.</p>
+      <h1 id="areasTitle">Choose an Area</h1>
+      <p>Pick a zone to explore facilities. Select <strong>Abqaiq Sr. Camp</strong> to reveal its sub‑zones.</p>
     </section>
 
     <!-- Row 1 -->
@@ -115,7 +117,7 @@
         <div class="zone-icon" aria-hidden="true">AF</div>
         <div class="zone-body">
           <h3 id="z-farhah">Al Farhah Bachelor Camp</h3>
-          <p>Library, gyms, sports grounds, indoor & outdoor courts, aquatics, and parks—everyday recreation for junior bachelor employees and trainees.</p>
+          <p>Gyms, courts, aquatics, and parks for everyday recreation.</p>
           <div class="zone-actions">
             /areas/al-farhah.htmlOpen Area</a>
             /categories.html#sportsSports</a>
@@ -129,12 +131,12 @@
         <div class="zone-icon" aria-hidden="true">SR</div>
         <div class="zone-body">
           <h3 id="z-sr">Abqaiq Sr. Camp</h3>
-          <p>Tap below to view sub‑zones (Oasis, Al Sa’adah, Biodiversity, Other Recreation).</p>
+          <p>Tap below to view sub‑zones (Oasis, Al Sa’adah, Other Recreation).</p>
           <div class="zone-actions">
             <button id="revealRow2" class="btn-pill primary" type="button" aria-controls="row2" aria-expanded="false">
               Show Sub‑Zones
             </button>
-            <div class="hint" id="revealHint">Reveals Oasis, Al Sa’adah, Biodiversity, Other Rec</div>
+            <div class="hint" id="revealHint">Reveals Oasis, Al Sa’adah, Other Rec</div>
           </div>
         </div>
       </article>
@@ -144,7 +146,7 @@
         <div class="zone-icon" aria-hidden="true">BC</div>
         <div class="zone-body">
           <h3 id="z-beaches">Beaches</h3>
-        <p>Qurayyah & Uqair—family time by the coast, seasonal programs.</p>
+          <p>Qurayyah & Uqair—family time by the coast, seasonal programs.</p>
           <div class="zone-actions">
             /areas/beaches.htmlOpen Area</a>
             /facility.html?id=qurrayah-beachQurayyah</a>
@@ -162,7 +164,7 @@
         <div class="zone-icon" aria-hidden="true">OA</div>
         <div class="zone-body">
           <h3 id="z-oasis">Oasis Recreation Complex</h3>
-          <p>A complete recreation complex featuring dining, games hub, lounge, seminar hall, exercise rooms, pools, and a vibrant kids’ hub—designed for relaxation, socialization, and entertainment.</p>
+          <p>CrossFit, ladies gym & pool, games hub—year‑round activities.</p>
           <div class="zone-actions">
             /areas/oasis.htmlOpen Area</a>
             /facility.html?id=oasis-crossfit-studioCrossFit</a>
@@ -176,25 +178,11 @@
         <div class="zone-icon" aria-hidden="true">AS</div>
         <div class="zone-body">
           <h3 id="z-saadah">Al Sa’adah Recreation Complex</h3>
-          <p>Bowling, pool, outdoor courts for tennis, padel, basketball, soccer & track field, plus exercise & aerobics rooms—programs for all ages year‑round.</p>
+          <p>Padel, tennis, soccer, pool & indoor entertainment hub.</p>
           <div class="zone-actions">
             /areas/al-saadah.htmlOpen Area</a>
             /facility.html?id=al-saadah-padel-courtPadel</a>
             /facility.html?id=al-saadah-bowling-alleyBowling</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- Biodiversity Parks -->
-      <article class="zone-card" role="region" aria-labelledby="z-biodiversity">
-        <div class="zone-icon" aria-hidden="true">BD</div>
-        <div class="zone-body">
-          <h3 id="z-biodiversity">Biodiversity Parks</h3>
-          <p>Explore community‑based sanctuaries with native gazelles, oryx, ostriches, and thousands of plants and birds.</p>
-          <div class="zone-actions">
-            /areas/biodiversity.htmlOpen Area</a>
-            /facility.html?id=abqaiq-nature-reserveNature Reserve</a>
-            /facility.html?id=abqaiqs-heavenHeaven</a>
           </div>
         </div>
       </article>
@@ -204,7 +192,7 @@
         <div class="zone-icon" aria-hidden="true">OR</div>
         <div class="zone-body">
           <h3 id="z-other">Other Recreation Facilities</h3>
-          <p>More to explore across the community: golf course, driving range, parks, stables, winter tents, and more.</p>
+          <p>Golf course, driving range, parks, stables, winter tent, and more.</p>
           <div class="zone-actions">
             /areas/main-camp.htmlOpen Area</a>
             /facility.html?id=golf-courseGolf</a>
@@ -248,13 +236,12 @@
       if(!btn || !row2) return;
 
       btn.addEventListener('click', () => {
-        const closed = row2.hasAttribute('hidden');
-        if(closed){
+        const nowOpen = row2.hasAttribute('hidden');
+        if(nowOpen){
           row2.removeAttribute('hidden');
           row2.style.display = 'grid';
           row2Label.style.display = 'flex';
           btn.setAttribute('aria-expanded', 'true');
-          btn.textContent = 'Hide Sub‑Zones';
           if(hint) hint.textContent = 'Showing sub‑zones below';
           row2.scrollIntoView({ behavior: 'smooth', block: 'start' });
         } else {
@@ -262,8 +249,7 @@
           row2.style.display = 'none';
           row2Label.style.display = 'none';
           btn.setAttribute('aria-expanded', 'false');
-          btn.textContent = 'Show Sub‑Zones';
-          if(hint) hint.textContent = 'Reveals Oasis, Al Sa’adah, Biodiversity, Other Rec';
+          if(hint) hint.textContent = 'Reveals Oasis, Al Sa’adah, Other Rec';
         }
       });
     })();
