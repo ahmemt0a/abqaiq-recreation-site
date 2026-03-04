@@ -3,61 +3,83 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Biodiversity Parks — Abqaiq Recreation</title>
-  <meta name="description" content="Explore Biodiversity Parks in Abqaiq: Nature Reserve and Abqaiq’s Heaven." />
-  /css/styles.css
-  <style>
-    .area-hero{position:relative;height:32vh;border-radius:12px;overflow:hidden;margin:16px 0;background:linear-gradient(135deg,#e0f2fe,#ecfccb);}
-    .area-hero-content{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#0f172a}
-    .area-hero-content h1{margin:0}
-    .filters{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0 16px}
-    .chip{border:1px solid #cbd5e1;background:#fff;color:#0f172a;padding:8px 12px;border-radius:999px;cursor:pointer}
-    .chip.active{background:#0ea5e9;color:#fff;border-color:#0ea5e9}
-    .facility-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
-    .card{background:#fff;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.08);overflow:hidden;display:flex;flex-direction:column}
-    .card img{width:100%;height:160px;object-fit:cover}
-    .card .card-body{padding:12px}
-    .card .meta{display:flex;justify-content:space-between;color:#64748b;font-size:14px}
-  </style>
+  <title>Biodiversity Parks</title>
+  <meta name="description" content="Explore community sanctuaries: Nature Reserve and Abqaiq’s Heaven." />
+  <meta property="og:title" content="Biodiversity Parks" />
+  <meta property="og:description" content="Explore community sanctuaries: Nature Reserve and Abqaiq’s Heaven." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/images/og-image.jpg" />
+  <link rel="icon" href="/images/favicon.ico" />
+  <link rel="stylesheet" href="/css/styles.css" />
 </head>
 <body>
+
   <header class="site-header">
-    /index.htmlAbqaiq Recreation</a>
+    <a class="logo" href="/index.html">Abqaiq Recreation</a>
     <nav class="main-nav" aria-label="Primary">
       <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="navMenu">☰</button>
       <ul id="navMenu" class="nav-menu">
-        <li>/index.htmlHome</a></li>
-        <li>/areas.htmlAreas</a></li>
-        <li>/categories.htmlCategories</a></li>
-        <li>/contact.htmlContact</a></li>
+        <li><a href="/index.html">Home</a></li>
+
+        <li class="has-sub">
+          <a href="/areas.html">Areas</a>
+          <ul class="submenu">
+            <!-- Primary Areas -->
+            <li><a href="/areas/al-farhah.html">Al Farhah Bachelor Camp</a></li>
+            <li><a href="/areas.html">Abqaiq Main Camp (Sub‑Zones)</a></li>
+            <li><a href="/areas/beaches.html">Beaches</a></li>
+            <li><hr /></li>
+            <!-- Sub‑Zones -->
+            <li><a href="/areas/oasis.html">— Oasis Complex</a></li>
+            <li><a href="/areas/al-saadah.html">— Al Sa’adah Complex</a></li>
+            <li><a href="/areas/biodiversity.html" aria-current="page">— Biodiversity Parks</a></li>
+            <li><a href="/areas/others.html">— Other Facilities</a></li>
+          </ul>
+        </li>
+
+        <li class="has-sub">
+          <a href="/categories.html">Categories</a>
+          <ul class="submenu">
+            <li><a href="/categories.html#fitness">Fitness</a></li>
+            <li><a href="/categories.html#sports">Sports</a></li>
+            <li><a href="/categories.html#parks">Parks</a></li>
+            <li><a href="/categories.html#aquatics">Aquatics</a></li>
+            <li><a href="/categories.html#entertainment">Entertainment</a></li>
+            <li><a href="/categories.html#nature">Nature</a></li>
+          </ul>
+        </li>
+
+        <li><a href="/contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
-
+  
   <main class="area-page container">
-    <section class="area-hero" aria-label="Biodiversity Parks">
-      <div class="area-hero-content">
-        <h1>Biodiversity Parks</h1>
-      </div>
+    <!-- Hero -->
+    <section class="area-hero">
+      <div class="area-hero-img biodiversity" role="img" aria-label="Biodiversity banner"></div>
+      <div class="area-hero-overlay"></div>
+      <div class="area-hero-content"><h1>Biodiversity Parks</h1></div>
     </section>
 
+    <!-- Overview -->
     <section class="area-overview">
       <h2>Overview</h2>
-      <p>
-        Explore Abqaiq’s nature sanctuaries—home to native gazelles, oryx, ostriches, and thousands of plants and birds.
-        Below are the nature-focused facilities currently open to visitors.
-      </p>
+      <p>Community-based sanctuaries celebrating native species and flora. Explore the Nature Reserve and Abqaiq’s Heaven—ideal for walks, photography, and learning outdoors.</p>
     </section>
 
-    <!-- Optional filters (kept simple here) -->
+    <!-- Filters -->
     <section class="filters" aria-label="Facility filters">
-      <button class="chip active" data-filter="Nature">Nature</button>
+      <button class="chip" data-filter="all" aria-pressed="true">All</button>
+      <button class="chip" data-filter="Nature">Nature</button>
+      <button class="chip" data-filter="Parks">Parks</button>
+      <button class="chip" data-filter="Entertainment">Entertainment</button>
     </section>
 
-    <!-- We’ll load all facilities from facilities.json, then filter by category=Nature AND (optionally) by known IDs -->
-    <section class="facility-grid" id="bioGrid" data-area="main-camp"></section>
+    <!-- Cards -->
+    <section class="facility-grid" id="facilityGrid" data-area="biodiversity"></section>
   </main>
-
+    
   <footer class="site-footer">
     <div class="footer-grid">
       <div>
@@ -67,80 +89,22 @@
       <div>
         <h4>Operation Manuals</h4>
         <ul>
-          <li>#Recreation Operation Manual</a></li>
-          <li>#Privacy Policy</a></li>
+          <li><a href="#">Recreation Operation Manual</a></li>
+          <li><a href="#">Privacy Policy</a></li>
         </ul>
       </div>
       <div>
-        <h4>For Assistance</h4>
+        <h4>Need Help</h4>
         <ul>
-          <li>tel:+966135720878Telephone: +966 13 572 0878</a></li>
-          <li>mailto:30004062.ABQRECEVENTSCOORDTEAM@Exchange.Aramco.com.saeMail: Abq Rec Events Coord Team</a></li>
+          <li><a href="tel:+966135720878">Telephone: +966 13 572 0878</a></li>
+          <li><a href="mailto:30004062.ABQRECEVENTSCOORDTEAM@Exchange.Aramco.com.sa">Email: Abq Rec Events Coord Team</a></li>
         </ul>
       </div>
-      <div></div>
     </div>
     <p class="copyright">© 2026 Abqaiq Recreation Services</p>
   </footer>
 
-  <script>
-    (async function () {
-      const grid = document.getElementById('bioGrid');
-      if (!grid) return;
-      let data = [];
-      try {
-        const res = await fetch('/data/facilities.json', { cache: 'no-store' });
-        data = await res.json();
-      } catch (e) {
-        console.error('[Biodiversity] Failed to load data', e);
-        grid.innerHTML = '<p style="padding:12px">Could not load facilities data.</p>';
-        return;
-      }
-
-      // Show only “Nature” facilities that are part of your Biodiversity experience
-      const natureList = data.filter(f => (f.category || '').toLowerCase() === 'nature');
-
-      // If you want to explicitly show only these two, uncomment the ids filter:
-      // const allowedIds = new Set(['abqaiq-nature-reserve','abqaiqs-heaven']);
-      // const list = natureList.filter(f => allowedIds.has(f.id));
-
-      const list = natureList;
-
-      function render(list) {
-        if (!list.length) {
-          grid.innerHTML = '<p style="padding:12px">No biodiversity facilities found.</p>';
-          return;
-        }
-        grid.innerHTML = list.map(item => {
-          const url = `/facility.html?id=${encodeURIComponent(item.id)}`;
-          const img = item.photo || '/images/placeholders/card.jpg';
-          const cat = item.category || '';
-          const st = item.status || '';
-          return `
-            <article class="card">
-              ${url}
-                ${img}
-              </a>
-              <div class="card-body">
-                <h3>${url}${item.name}</a></h3>
-                <div class="meta"><span>${cat}</span><span>${st}</span></div>
-              </div>
-            </article>`;
-        }).join('');
-      }
-
-      render(list);
-
-      // Single “Nature” chip is already active—kept for future expandability
-      const chips = document.querySelectorAll('.chip');
-      chips.forEach(ch => {
-        ch.addEventListener('click', () => {
-          chips.forEach(c => c.classList.remove('active'));
-          ch.classList.add('active');
-          render(list); // currently only Nature
-        });
-      });
-    })();
-  </script>
+  <script src="/js/main.js"></script>
+  <script src="/js/area.js"></script>
 </body>
 </html>

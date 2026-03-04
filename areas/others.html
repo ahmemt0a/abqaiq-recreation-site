@@ -3,67 +3,79 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Other Facilities — Abqaiq Recreation</title>
-  <meta name="description" content="Golf course, driving range, parks, stables, winter tent, walkways and more." />
-  <meta property="og:title" content="Other Facilities — Abqaiq Recreation" />
-  <meta property="og:description" content="Golf course, driving range, parks, stables, winter tent, walkways and more." />
+  <title>Other Facilities</title>
+  <meta name="description" content="Golf, driving range, parks, stables, winter tents, and walking paths." />
+  <meta property="og:title" content="Other Facilities" />
+  <meta property="og:description" content="Golf, driving range, parks, stables, winter tents, and walking paths." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="/images/og-image.jpg" />
   <link rel="icon" href="/images/favicon.ico" />
   <link rel="stylesheet" href="/css/styles.css" />
-  <style>
-    .area-hero{position:relative;height:32vh;border-radius:12px;overflow:hidden;margin:16px 0;background:linear-gradient(135deg,#e0f2fe,#ecfccb);}
-    .area-hero-content{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#0f172a}
-    .area-hero-content h1{margin:0}
-    .filters{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0 16px}
-    .chip{border:1px solid #cbd5e1;background:#fff;color:#0f172a;padding:8px 12px;border-radius:999px;cursor:pointer}
-    .chip.active{background:#0ea5e9;color:#fff;border-color:#0ea5e9}
-    .facility-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
-    .card{background:#fff;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.08);overflow:hidden;display:flex;flex-direction:column}
-    .card img{width:100%;height:160px;object-fit:cover}
-    .card .card-body{padding:12px}
-    .card .meta{display:flex;justify-content:space-between;color:#64748b;font-size:14px}
-  </style>
 </head>
 <body>
+
   <header class="site-header">
     <a class="logo" href="/index.html">Abqaiq Recreation</a>
     <nav class="main-nav" aria-label="Primary">
       <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="navMenu">☰</button>
       <ul id="navMenu" class="nav-menu">
         <li><a href="/index.html">Home</a></li>
-        <li><a href="/areas.html">Areas</a></li>
-        <li><a href="/categories.html">Categories</a></li>
+
+        <li class="has-sub">
+          <a href="/areas.html">Areas</a>
+          <ul class="submenu">
+            <!-- Primary Areas -->
+            <li><a href="/areas/al-farhah.html">Al Farhah Bachelor Camp</a></li>
+            <li><a href="/areas.html">Abqaiq Main Camp (Sub‑Zones)</a></li>
+            <li><a href="/areas/beaches.html">Beaches</a></li>
+            <li><hr /></li>
+            <!-- Sub‑Zones -->
+            <li><a href="/areas/oasis.html">— Oasis Complex</a></li>
+            <li><a href="/areas/al-saadah.html">— Al Sa’adah Complex</a></li>
+            <li><a href="/areas/biodiversity.html">— Biodiversity Parks</a></li>
+            <li><a href="/areas/others.html" aria-current="page">— Other Facilities</a></li>
+          </ul>
+        </li>
+
+        <li class="has-sub">
+          <a href="/categories.html">Categories</a>
+          <ul class="submenu">
+            <li><a href="/categories.html#fitness">Fitness</a></li>
+            <li><a href="/categories.html#sports">Sports</a></li>
+            <li><a href="/categories.html#parks">Parks</a></li>
+            <li><a href="/categories.html#aquatics">Aquatics</a></li>
+            <li><a href="/categories.html#entertainment">Entertainment</a></li>
+            <li><a href="/categories.html#nature">Nature</a></li>
+          </ul>
+        </li>
+
         <li><a href="/contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
-
+  
   <main class="area-page container">
-    <!-- Banner -->
-    <section class="area-hero" role="img" aria-label="Other recreation facilities">
-      <div class="area-hero-content"><h1>Other Facilities</h1></div>
-    </section>
-
-    <!-- Overview -->
-    <section class="area-overview">
-      <h2>Overview</h2>
-      <p>Explore community facilities around Abqaiq Main Camp: golf course, driving range, parks, stables, winter tent, and walking paths.</p>
+    <!-- Hero -->
+    <section class="area-hero">
+      <div class="area-hero-img others" role="img" aria-label="Other Facilities banner"></div>
+      <div class="areales, winter tents, and walking paths like Abqaiq WALK.</p>
     </section>
 
     <!-- Filters -->
-    <section class="filters" aria-label="Filters">
-      <button class="chip active" data-filter="all">All</button>
+    <section class="filters" aria-label="Facility filters">
+      <button class="chip" data-filter="all" aria-pressed="true">All</button>
       <button class="chip" data-filter="Sports">Sports</button>
       <button class="chip" data-filter="Parks">Parks</button>
       <button class="chip" data-filter="Nature">Nature</button>
       <button class="chip" data-filter="Entertainment">Entertainment</button>
+      <button class="chip" data-filter="Fitness">Fitness</button>
+      <button class="chip" data-filter="Aquatics">Aquatics</button>
     </section>
 
     <!-- Cards -->
-    <section class="facility-grid" id="facilityGrid" data-area="others" aria-live="polite"></section>
+    <section class="facility-grid" id="facilityGrid" data-area="others"></section>
   </main>
-
+    
   <footer class="site-footer">
     <div class="footer-grid">
       <div>
@@ -71,70 +83,24 @@
         <p>Serving the community with safe, inclusive, and memorable experiences.</p>
       </div>
       <div>
-        <h4>Policies</h4>
+        <h4>Operation Manuals</h4>
         <ul>
-          <li><a href="#">Rec Ops Manual</a></li>
+          <li>#Recreation Operation Manual</a></li>
+          <li>#Privacy Policy</a></li>
         </ul>
       </div>
       <div>
         <h4>Need Help</h4>
         <ul>
-          <li><a href="tel:+966135720878">Telephone: +966 13 572 0878</a></li>
-          <li><a href="mailto:30004062.ABQRECEVENTSCOORDTEAM@Exchange.Aramco.com.sa">Email: Abq Rec Events Coord Team</a></li>
+          <li>tel:+966135720878Telephone: +966 13 572 0878</a></li>
+          <li>mailto:30004062.ABQRECEVENTSCOORDTEAM@Exchange.Aramco.com.saEmail: Abq Rec Events Coord Team</a></li>
         </ul>
       </div>
     </div>
     <p class="copyright">© 2026 Abqaiq Recreation Services</p>
   </footer>
 
-  <script>
-    (async function(){
-      const grid = document.getElementById('facilityGrid');
-      const chips = document.querySelectorAll('.chip');
-      const areaSlug = grid.getAttribute('data-area'); // "others"
-      let all = [];
-
-      function render(list){
-        if(!list.length){
-          grid.innerHTML = '<p style="padding:12px">No facilities found for this section.</p>';
-          return;
-        }
-        grid.innerHTML = list.map(item => {
-          const url = `/facility.html?id=${encodeURIComponent(item.id)}`;
-          const img = item.photo || '/images/placeholders/card.jpg';
-          const cat = item.category || '';
-          const st = item.status || '';
-          return `
-            <article class="card">
-              <a href="${url}" aria-label="${item.name}">
-                <img src="${img}" alt="${item.name}">
-              </a>
-              <div class="card-body">
-                <h3><a href="${url}">${item.name}</a></h3>
-                <div class="meta"><span>${cat}</span><span>${st}</span></div>
-              </div>
-            </article>`;
-        }).join('');
-      }
-
-      try{
-        const res = await fetch('/data/facilities.json', { cache: 'no-store' });
-        const data = await res.json();
-        all = data.filter(d => (d.area || '').toLowerCase() === areaSlug);
-        render(all);
-      }catch(e){
-        console.error('[Others] Failed to load data', e);
-        grid.innerHTML = '<p style="padding:12px">Could not load facilities data.</p>';
-      }
-
-      chips.forEach(chip => chip.addEventListener('click', () => {
-        chips.forEach(c => c.classList.remove('active'));
-        chip.classList.add('active');
-        const f = chip.dataset.filter;
-        if(f === 'all') return render(all);
-        render(all.filter(i => (i.category || '') === f));
-      }));
-    })();
-  </script>
+  /js/main.js</script>
+  /js/area.js</script>
 </body>
 </html>
