@@ -1,17 +1,19 @@
-
 <!doctype html>
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Facility — Abqaiq Recreation</title>
-  <meta name="description" content="Abqaiq Recreation Services — facilities, activities, and experiences across our community." />
-  <meta property="og:title" content="Facility — Abqaiq Recreation" />
-  <meta property="og:description" content="Abqaiq Recreation Services — facilities, activities, and experiences across our community." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="/images/og-image.jpg" />
-  <link rel="icon" href="/images/favicon.ico" />
   <link rel="stylesheet" href="/css/styles.css" />
+  <style>
+    .breadcrumb { font-size:.95rem; margin:14px 0; color:#475569; }
+    .breadcrumb a { color:#0ea5e9; text-decoration:none; }
+    .breadcrumb span.sep { margin: 0 6px; color:#94a3b8; }
+    .facility-hero img { width:100%; height:280px; object-fit:cover; border-radius:12px; }
+    .card { background:#fff; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,.08); }
+    .gallery-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(160px,1fr)); gap:10px; }
+    .gallery-grid img { width:100%; height:140px; object-fit:cover; border-radius:8px; }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -20,111 +22,214 @@
       <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="navMenu">☰</button>
       <ul id="navMenu" class="nav-menu">
         <li><a href="/index.html">Home</a></li>
-        <li class="has-sub">
-          <a href="/areas.html">Areas</a>
-          <ul class="submenu">
-            <li><a href="/areas/main-camp.html">Main Camp</a></li>
-            <li><a href="/areas/al-farhah.html">Al Farhah</a></li>
-            <li><a href="/areas/al-saadah.html">Al Sa’adah</a></li>
-            <li><a href="/areas/oasis.html">Oasis</a></li>
-            <li><a href="/areas/beaches.html">Beaches</a></li>
-          </ul>
-        </li>
-        <li class="has-sub">
-          <a href="#">Categories</a>
-          <ul class="submenu">
-            <li><a href="/categories.html#fitness">Fitness</a></li>
-            <li><a href="/categories.html#sports">Sports</a></li>
-            <li><a href="/categories.html#parks">Parks</a></li>
-            <li><a href="/categories.html#aquatics">Aquatics</a></li>
-            <li><a href="/categories.html#entertainment">Entertainment</a></li>
-            <li><a href="/categories.html#nature">Nature</a></li>
-          </ul>
-        </li>
+        <li><a href="/areas.html">Areas</a></li>
+        <li><a href="/categories.html">Categories</a></li>
         <li><a href="/contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
-  
-<main class="facility-page container" id="facilityPage">
-  <article>
-    <header class="facility-header">
-      <div class="facility-hero">
-        <img id="facilityHero" src="/images/placeholders/facility-hero.jpg" alt="Facility photo" />
-      </div>
-      <div class="facility-title">
-        <h1 id="facilityName">Facility Name</h1>
-        <p class="category" id="facilityCategory">Category</p>
-      </div>
-    </header>
 
-    <section class="quick-facts">
-      <h2>Quick Facts</h2>
-      <ul>
-        <li><strong>Status:</strong> <span id="facilityStatus">Operating</span></li>
-        <li><strong>Operating Days:</strong> <span id="facilityDays">—</span></li>
-        <li><strong>Opening Time:</strong> <span id="facilityOpen">—</span></li>
-        <li><strong>Closing Time:</strong> <span id="facilityClose">—</span></li>
-      </ul>
-    </section>
+  <main class="facility-page container" id="facilityPage">
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <span id="bcPrimary"></span>
+      <span class="sep" aria-hidden="true">›</span>
+      <span id="bcSecondary"></span>
+      <span class="sep" aria-hidden="true">›</span>
+      <span id="bcFacility" aria-current="page"></span>
+    </nav>
 
-    <section class="facility-description">
-      <h2>Description</h2>
-      <p><strong>Purpose:</strong> <span id="facilityPurpose">—</span></p>
-      <p><strong>Purpose Category:</strong> <span id="facilityPurposeCategory">—</span></p>
-      <p id="facilityLongDesc">—</p>
-    </section>
+    <article class="card">
+      <header class="facility-header">
+        <div class="facility-hero">
+          <img id="facilityHero" src="/images/placeholders/facility-hero.jpg" alt="Facility photo" />
+        </div>
+        <div class="facility-title" style="padding:12px 16px;">
+          <h1 id="facilityName">Facility Name</h1>
+          <p class="category" id="facilityCategory">Category</p>
+        </div>
+      </header>
 
-    <section class="facility-location">
-      <h2>Location</h2>
-      <p id="facilityAddress">—</p>
-      <p><span id="facilityLat">—</span>, <span id="facilityLng">—</span></p>
-      <div class="map-embed" id="mapEmbed" aria-label="Google Map embed"></div>
-    </section>
-
-    <section class="facility-gallery">
-      <h2>Gallery</h2>
-      <div class="gallery-grid" id="facilityGallery"></div>
-    </section>
-
-    <section class="facility-amenities">
-      <h2>Amenities & Services</h2>
-      <ul id="facilityAmenities"></ul>
-    </section>
-
-    <section class="facility-contact">
-      <h2>Contact</h2>
-      <ul>
-        <li><strong>Phone:</strong> <a id="facilityPhone" href="#">—</a></li>
-        <li><strong>Email:</strong> <a id="facilityEmail" href="#">—</a></li>
-        <li><strong>Booking:</strong> <a id="facilityBooking" href="#">—</a></li>
-      </ul>
-    </section>
-  </article>
-</main>
-
-  <footer class="site-footer">
-    <div class="footer-grid">
-      <div>
-        <h4>About Recreation Services</h4>
-      </div>
-      <div>
-        <h4>Policies</h4>
+      <section class="quick-facts" style="padding:0 16px 8px;">
+        <h2>Quick Facts</h2>
         <ul>
-          <li><a href="#">Rec Ops Manual</a></li>
+          <li><strong>Status:</strong> <span id="facilityStatus">—</span></li>
+          <li><strong>Operation Type:</strong> <span id="facilityOpType">—</span></li>
+          <li><strong>Operation Period:</strong> <span id="facilityOpPeriod">—</span></li>
+          <li><strong>Operating Days:</strong> <span id="facilityDays">—</span></li>
+          <li><strong>Opening (Weekdays):</strong> <span id="facilityOpen">—</span> – <span id="facilityClose">—</span></li>
+          <li><strong>Friday:</strong> <span id="friOpen">—</span> – <span id="friClose">—</span></li>
+          <li><strong>Saturday:</strong> <span id="satOpen">—</span> – <span id="satClose">—</span></li>
         </ul>
-      </div>
-      <div>
-        <h4>Need Help</h4>
+      </section>
+
+      <section class="facility-description" style="padding:0 16px 8px;">
+        <h2>Description</h2>
+        <p><strong>Purpose:</strong> <span id="facilityPurpose">—</span></p>
+        <p><strong>Purpose Category:</strong> <span id="facilityPurposeCategory">—</span></p>
+        <p id="facilityLongDesc">—</p>
+      </section>
+
+      <section class="facility-location" style="padding:0 16px 8px;">
+        <h2>Location</h2>
+        <p id="facilityAddress">—</p>
+        <p><span id="facilityLat">—</span>, <span id="facilityLng">—</span></p>
+        <div class="map-embed" id="mapEmbed" aria-label="Google Map embed" style="margin: 10px 0 16px;"></div>
+        <p><a class="btn-pill" id="backToArea" href="/areas.html">← Back to Area</a></p>
+      </section>
+
+      <section class="facility-gallery" style="padding:0 16px 16px;">
+        <h2>Gallery</h2>
+        <div class="gallery-grid" id="facilityGallery"></div>
+      </section>
+
+      <section class="facility-amenities" style="padding: 0 16px 16px;">
+        <h2>Amenities & Services</h2>
+        <ul id="facilityAmenities"></ul>
+      </section>
+
+      <section class="facility-contact" style="padding: 0 16px 24px;">
+        <h2>Contact</h2>
         <ul>
-          <li><a href="tel:+966000000000">Emergency: +966 13 572 0911</a></li>
-          <li><a href="mailto:30004062.ABQRECEVENTSCOORDTEAM@Exchange.Aramco.com.sa"> eMail: ABQ REC EVENTS COORD TEAM</a></li>
+          <li><strong>Phone:</strong> <a id="facilityPhone" href="#">—</a></li>
+          <li><strong>Email:</strong> <a id="facilityEmail" href="#">—</a></li>
+          <li><strong>Booking:</strong> <a id="facilityBooking" href="#">—</a></li>
         </ul>
-      </div>
-     </div>
-    <p class="copyright">© 2026 ABQ REC SVCS</p>
-  </footer>
+      </section>
+    </article>
+  </main>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <h4>About Recreation Services</h4>
+      <p>Serving the community with safe, inclusive, and memorable experiences.</p>
+    </div>
+
+    <div>
+      <h4>Operation Manuals</h4>
+      <ul>
+        <li><a href="#">Recreation Operation Manual</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Need Help</h4>
+      <ul>
+        <li><a href="tel:+966135720878">Telephone: +966 13 572 0878</a></li>
+        <li><a href="mailto:30004062.ABQRECEVENTSCOORDTEAM@Exchange.Aramco.com.sa">Email: Abq Rec Events Coord Team</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="copyright">© 2026 Abqaiq Recreation Services</p>
+</footer>
+
+  <script>
+    (function(){
+      function qs(name){ const u=new URL(window.location.href); return u.searchParams.get(name); }
+      function setTxt(id, v){ const n=document.getElementById(id); if(n) n.textContent = v || '—'; }
+      function setHref(id, href, text){ const n=document.getElementById(id); if(n && href){ n.href = href; if (text) n.textContent = text; } }
+
+      const areaLabelMap = {
+        "oasis":         { primary: "Abqaiq Main Camp", secondary: "Oasis Complex", back: "/areas/oasis.html" },
+        "al-saadah":     { primary: "Abqaiq Main Camp", secondary: "Al Sa’adah Complex", back: "/areas/al-saadah.html" },
+        "biodiversity":  { primary: "Abqaiq Main Camp", secondary: "Biodiversity Parks", back: "/areas/biodiversity.html" },
+        "others":        { primary: "Abqaiq Main Camp", secondary: "Other Facilities", back: "/areas/main-camp.html" },
+        "al-farhah":     { primary: null,               secondary: "Al Farhah Bachelor Camp", back: "/areas/al-farhah.html" },
+        "beaches":       { primary: null,               secondary: "Beaches", back: "/areas/beaches.html" },
+        "main-camp":     { primary: "Abqaiq Main Camp", secondary: "", back: "/areas/main-camp.html" }
+      };
+
+      async function run(){
+        const id = qs('id');
+        if(!id) return;
+
+        let data=[];
+        try{
+          const res = await fetch('/data/facilities.json', { cache: 'no-store' });
+          data = await res.json();
+        } catch(e){
+          console.error('[Facility] Failed to load data', e); return;
+        }
+
+        const f = data.find(x => String(x.id) === String(id));
+        if(!f){ console.warn('[Facility] Not found id=', id); return; }
+
+        // Title
+        setTxt('facilityName', f.name);
+        setTxt('facilityCategory', f.category);
+
+        // Quick facts
+        setTxt('facilityStatus', f.status);
+        setTxt('facilityOpType', f.operation_type);
+        setTxt('facilityOpPeriod', f.operation_period);
+        setTxt('facilityDays', f.operating_days);
+        setTxt('facilityOpen', f.weekdays_open_time || f.open_time);
+        setTxt('facilityClose', f.weekdays_close_time || f.close_time);
+        setTxt('friOpen', f.fri_open_time);
+        setTxt('friClose', f.fri_close_time);
+        setTxt('satOpen', f.sat_open_time);
+        setTxt('satClose', f.sat_close_time);
+
+        // Description
+        setTxt('facilityPurpose', f.purpose);
+        setTxt('facilityPurposeCategory', f.purpose_category);
+        setTxt('facilityLongDesc', f.description);
+
+        // Location
+        setTxt('facilityAddress', f.address);
+        setTxt('facilityLat', f.lat);
+        setTxt('facilityLng', f.lng);
+
+        // Images
+        const hero = document.getElementById('facilityHero');
+        if (f.photos && f.photos.length){ hero.src = f.photos[0]; hero.alt = f.name; }
+        const gallery = document.getElementById('facilityGallery');
+        if (gallery && f.photos){ gallery.innerHTML = f.photos.map(src => `<img src="${src}" alt="${f.name} photo">`).join(''); }
+
+        // Amenities
+        const am = document.getElementById('facilityAmenities');
+        if(am && f.amenities){ am.innerHTML = f.amenities.map(a => `<li>${a}</li>`).join(''); }
+
+        // Contact
+        if (f.phone)  setHref('facilityPhone', `tel:${f.phone}`, f.phone);
+        if (f.email)  setHref('facilityEmail', `mailto:${f.email}`, f.email);
+        if (f.booking)setHref('facilityBooking', f.booking, 'Book now');
+
+        // Map
+        const map = document.getElementById('mapEmbed');
+        if(map && f.lat && f.lng){
+          const q = encodeURIComponent(`${f.lat},${f.lng}`);
+          map.innerHTML = `<iframe title="Map" width="100%" height="300" style="border:0" loading="lazy" allowfullscreen src="https://www.google.com/maps?q=${q}&output=embed"></iframe>`;
+        }
+
+        // Breadcrumb (Option A)
+        const meta = areaLabelMap[(f.area || '').toLowerCase()] || { primary:null, secondary:'', back:'/areas.html' };
+        const bcPrimary = document.getElementById('bcPrimary');
+        const bcSecondary = document.getElementById('bcSecondary');
+        const bcFacility = document.getElementById('bcFacility');
+
+        // Build compact breadcrumb
+        if (meta.primary){
+          bcPrimary.innerHTML   = `<a href="/areas.html">${meta.primary}</a>`;
+          bcSecondary.innerHTML = `<a href="${meta.back}">${meta.secondary}</a>`;
+        } else {
+          bcPrimary.textContent = ''; // hide primary separator visually if empty
+          bcSecondary.innerHTML = `<a href="${meta.back}">${meta.secondary}</a>`;
+          // Remove first separator when no primary
+          const seps = document.querySelectorAll('.breadcrumb .sep');
+          if (seps.length) seps[0].style.display = 'none';
+        }
+        bcFacility.textContent = f.name || 'Facility';
+
+        // Back to area button
+        setHref('backToArea', meta.back);
+      }
+      run();
+    })();
+  </script>
   <script src="/js/main.js"></script>
-  <script src="/js/facility.js"></script>
 </body>
 </html>
