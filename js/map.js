@@ -1,4 +1,3 @@
-
 (function(){
   const zones = document.querySelectorAll('.zone');
   zones.forEach(z=>{
