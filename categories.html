@@ -1,37 +1,44 @@
-
 <!doctype html>
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Categories — Abqaiq Recreation</title>
-  <meta name="description" content="Abqaiq Recreation Services — facilities, activities, and experiences across our community." />
+  <meta name="description" content="Browse facilities by type of experience." />
   <meta property="og:title" content="Categories — Abqaiq Recreation" />
-  <meta property="og:description" content="Abqaiq Recreation Services — facilities, activities, and experiences across our community." />
+  <meta property="og:description" content="Browse facilities by type of experience." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="/images/og-image.jpg" />
   <link rel="icon" href="/images/favicon.ico" />
   <link rel="stylesheet" href="/css/styles.css" />
+  <style>
+    .page-header { margin: 16px 0; }
+    .category-list { display:flex; flex-wrap:wrap; gap:10px; margin:12px 0 28px; }
+    .chip { border:1px solid #cbd5e1; background:#fff; color:#0f172a; padding:8px 12px; border-radius:999px; text-decoration:none; }
+  </style>
 </head>
 <body>
   <header class="site-header">
     <a class="logo" href="/index.html">Abqaiq Recreation</a>
     <nav class="main-nav" aria-label="Primary">
       <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="navMenu">☰</button>
-      <ul id="navMenu" class="nav-menu">
+      <ul id="navMenu" class="main-nav">
         <li><a href="/index.html">Home</a></li>
         <li class="has-sub">
           <a href="/areas.html">Areas</a>
           <ul class="submenu">
-            <li><a href="/areas/main-camp.html">Main Camp</a></li>
-            <li><a href="/areas/al-farhah.html">Al Farhah</a></li>
-            <li><a href="/areas/al-saadah.html">Al Sa’adah</a></li>
-            <li><a href="/areas/oasis.html">Oasis</a></li>
+            <li><a href="/areas/al-farhah.html">Al Farhah Bachelor Camp</a></li>
+            <li><a href="/areas.html">Abqaiq Main Camp (Sub‑Zones)</a></li>
             <li><a href="/areas/beaches.html">Beaches</a></li>
+            <li><hr /></li>
+            <li><a href="/areas/oasis.html">— Oasis Complex</a></li>
+            <li><a href="/areas/al-saadah.html">— Al Sa’adah Complex</a></li>
+            <li><a href="/areas/biodiversity.html">— Biodiversity Parks</a></li>
+            <li><a href="/areas/main-camp.html">— Other Facilities</a></li>
           </ul>
         </li>
         <li class="has-sub">
-          <a href="#">Categories</a>
+          <a class="active" href="/categories.html">Categories</a>
           <ul class="submenu">
             <li><a href="/categories.html#fitness">Fitness</a></li>
             <li><a href="/categories.html#sports">Sports</a></li>
@@ -47,21 +54,28 @@
   </header>
   
   <main class="container">
-    <header class="page-header"><h1>Categories</h1><p>Browse by type of experience.</p></header>
+    <header class="page-header">
+      <h1>Categories</h1>
+      <p>Browse by type of experience.</p>
+    </header>
+
     <ul class="category-list">
-      <li><a href="/areas.html#fitness" class="chip">Fitness</a></li>
-      <li><a href="/areas.html#sports" class="chip">Sports</a></li>
-      <li><a href="/areas.html#parks" class="chip">Parks</a></li>
-      <li><a href="/areas.html#aquatics" class="chip">Aquatics</a></li>
-      <li><a href="/areas.html#entertainment" class="chip">Entertainment</a></li>
-      <li><a href="/areas.html#nature" class="chip">Nature</a></li>
+      <li><a id="fitness" class="chip" href="/categories.html#fitness">Fitness</a></li>
+      <li><a id="sports" class="chip" href="/categories.html#sports">Sports</a></li>
+      <li><a id="parks" class="chip" href="/categories.html#parks">Parks</a></li>
+      <li><a id="aquatics" class="chip" href="/categories.html#aquatics">Aquatics</a></li>
+      <li><a id="entertainment" class="chip" href="/categories.html#entertainment">Entertainment</a></li>
+      <li><a id="nature" class="chip" href="/categories.html#nature">Nature</a></li>
     </ul>
+
+    <!-- Optional: add small descriptors or lists; left simple for now -->
   </main>
 
   <footer class="site-footer">
     <div class="footer-grid">
       <div>
         <h4>About Recreation Services</h4>
+        <p>Serving the community with safe, inclusive, and memorable experiences.</p>
       </div>
       <div>
         <h4>Policies</h4>
@@ -72,14 +86,14 @@
       <div>
         <h4>Need Help</h4>
         <ul>
-          <li><a href="tel:+966000000000">Emergency: +966 13 572 0911</a></li>
-          <li><a href="mailto:30004062.ABQRECEVENTSCOORDTEAM@Exchange.Aramco.com.sa"> eMail: ABQ REC EVENTS COORD TEAM</a></li>
+          <li><a href="tel:+966135720911">Emergency: +966 13 572 0911</a></li>
+          <li><a href="mailto:30004062.ABQRECEVENTSCOORDTEAM@Exchange.Aramco.com.sa">Email: ABQ Rec Events Coord Team</a></li>
         </ul>
       </div>
      </div>
     <p class="copyright">© 2026 ABQ REC SVCS</p>
   </footer>
+
   <script src="/js/main.js"></script>
-  
 </body>
 </html>
