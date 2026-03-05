@@ -16,13 +16,11 @@
     "address": "10th Street, Main Camp, Abqaiq, Saudi Aramco",
     "lat": "25.954939",
     "lng": "49.676877",
-    "photo": "/images/facilities/abqaiq-nature-reserve/cover.jpg",
-    "photos": [
-      "/images/facilities/abqaiq-nature-reserve/cover.jpg",
-      "/images/facilities/abqaiq-nature-reserve/gallery-1.jpg",
-      "/images/facilities/abqaiq-nature-reserve/gallery-2.jpg"
-    ],
-    "amenities": []
+    "photo": "/images/abqaiq-nature-reserve/cover.jpg",
+    "photos": ["/images/abqaiq-nature-reserve/cover.jpg",
+      "/images/abqaiq-nature-reserve/gallery-1.jpg",
+      "/images/abqaiq-nature-reserve/gallery-2.jpg"],
+    "amenities": ["Parking", "Binocular"]
   },
   {
     "id": "abqaiqs-heaven",
@@ -30,7 +28,7 @@
     "name": "Abqaiq’s Heaven",
     "category": "Nature",
     "status": "Operating",
-    "operating_days": "7 days",
+    "operating_days": "4 days (Tue - Sat)",
     "open_time": "10:00 AM",
     "close_time": "9:00 PM",
     "operation_type": "Seasonal",
