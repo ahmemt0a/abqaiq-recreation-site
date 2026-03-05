@@ -1,3 +1,21 @@
+let data = [];
+try {
+  let res = await fetch('/data/facilities.json', { cache: 'no-store' });
+  if (!res.ok) {
+    console.warn('[Facility] /data/facilities.json status=', res.status, res.statusText, '→ trying relative path');
+    res = await fetch('./data/facilities.json', { cache: 'no-store' });
+  }
+  const text = await res.text();
+  try {
+    data = JSON.parse(text);
+  } catch (e) {
+    console.error('[Facility] JSON parse failed. Response text was:\n', text.slice(0, 500), '...');
+    throw e;
+  }
+} catch (e) {
+  console.error('[Facility] Failed to load data', e);
+  return;
+}
 /* ==========================================================================
    Abqaiq Recreation — facility.js (Full Rebuild)
    Renders a single facility page from /data/facilities.json.
