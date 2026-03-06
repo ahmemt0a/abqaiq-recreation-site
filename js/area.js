@@ -1,36 +1,18 @@
-// /js/area.js  (replace the load() function with this resilient version)
-(async function load() {
+async function loadFacilities() {
+  const container = document.querySelector('#facilities-container'); // or wherever your list goes
   try {
-    let res = await fetch('/data/facilities.json', { cache: 'no-store' });
-    if (!res.ok) {
-      console.warn('[Area] /data/facilities.json status=', res.status, res.statusText, '→ trying relative path');
-      res = await fetch('./data/facilities.json', { cache: 'no-store' });
+    const response = await fetch('/data/facilities.json');
+    if (!response.ok) throw new Error('Network response was not ok');
+    
+    const data = await response.json();
+    renderFacilities(data); // This function would build your HTML cards
+  } catch (error) {
+    console.error('Fetch error:', error);
+    if (container) {
+      container.innerHTML = `<p class="error">Could not load facilities data. Please try again later.</p>`;
     }
-    const text = await res.text();
-    let data;
-    try {
-      data = JSON.parse(text);
-    } catch (e) {
-      console.error('[Area] JSON parse failed. Response text was:\n', text.slice(0, 500), '...');
-      throw e;
-    }
-
-    ALL = data.filter(d => (d.area || '').toLowerCase() === areaSlug);
-    render(ALL);
-
-    if (filtersEl) {
-      filtersEl.addEventListener('chip:change', (ev) => {
-        const val = (ev.detail && ev.detail.value) || 'all';
-        if (val.toLowerCase() === 'all') return render(ALL);
-        const filtered = ALL.filter(i => (i.category || '').toLowerCase() === val.toLowerCase());
-        render(filtered);
-      });
-    }
-  } catch (e) {
-    console.error('[Area] Failed to load or parse facilities.json:', e);
-    grid.innerHTML = '<p style="padding:12px">Could not load facilities data.</p>';
   }
-})();
+}
 /* ==========================================================================
    Abqaiq Recreation — area.js (Full Rebuild)
    Renders facility cards on area pages from /data/facilities.json.
