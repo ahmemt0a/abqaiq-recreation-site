@@ -1,4 +1,67 @@
+/* 1. Main horizontal layout */
+.nav-links {
+  display: flex;         /* Makes Home, Areas, Category side-by-side */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 20px;
+}
 
+.nav-links li {
+  position: relative;    /* Key for positioning dropdowns */
+}
+
+/* 2. Hide all sub-menus by default */
+.submenu, .flyout {
+  display: none;         /* Hidden at the start */
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  min-width: 200px;
+  list-style: none;
+  padding: 0;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  z-index: 100;
+}
+
+/* 3. Position the first dropdown (Areas) */
+.submenu {
+  top: 100%;             /* Shows below "Areas" */
+  left: 0;
+}
+
+/* 4. Position the second dropdown (Abqaiq Sub-menu) to the RIGHT */
+.flyout {
+  top: 0;
+  left: 100%;            /* Appears to the right of the parent */
+}
+
+/* 5. HOVER LOGIC */
+.has-dropdown:hover > .submenu {
+  display: block;        /* Shows "Areas" list on hover */
+}
+
+.has-flyout:hover > .flyout {
+  display: block;        /* Shows "Abqaiq" sub-items ONLY when hovering Abqaiq */
+}
+
+/* 6. Visual styling */
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  padding: 10px 15px;
+  display: block;
+}
+
+.nav-links a:hover {
+  background-color: #f4f4f4;
+}
+
+.arrow {
+  float: right;
+  font-size: 10px;
+  margin-top: 3px;
+}
 :root{
   --bg:#0b1320; --text:#101219; --white:#fff; --muted:#6b7280; --brand:#0ea5e9; --brand-2:#22c55e; --card:#ffffff; --shadow:0 10px 30px rgba(0,0,0,.15);
 }
