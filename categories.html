@@ -11,13 +11,16 @@
   <meta property="og:image" content="/images/og-image.jpg" />
   <link rel="icon" href="/images/favicon.ico" />
   <link rel="stylesheet" href="/css/styles.css" />
+  
   <style>
     .page-header { margin: 16px 0; }
     .category-list { display:flex; flex-wrap:wrap; gap:10px; margin:12px 0 28px; }
     .chip { border:1px solid #cbd5e1; background:#fff; color:#0f172a; padding:8px 12px; border-radius:999px; text-decoration:none; }
   </style>
 </head>
+  
 <body>
+  
   <header class="site-header">
     <a class="logo" href="/index.html">Abqaiq Recreation</a>
     <nav class="main-nav" aria-label="Primary">
@@ -28,19 +31,24 @@
           <a href="/areas.html">Areas</a>
           <ul class="submenu">
             <li><a href="/areas/al-farhah.html">Al Farhah Bachelor Camp</a></li>
-            <li><a href="/areas.html">Abqaiq Main Camp (Sub‑Zones)</a></li>
+            <li class="has-flyout">
+            <a href="#">Abqaiq Main Camp <span class="arrow">▶</span></a>
+            <ul class="flyout-menu">
+            <li><a href="/areas/oasis.html">Oasis Complex</a></li>
+            <li><a href="/areas/al-saadah.html">Al Sa’adah Complex</a></li>
+            <li><a href="/areas/biodiversity.html">Biodiversity Parks</a></li>
+            <li><a href="/areas/main-camp.html">Other Facilities</a></li>
+              
             <li><a href="/areas/beaches.html">Beaches</a></li>
-            <li><hr /></li>
-            <li><a href="/areas/oasis.html">— Oasis Complex</a></li>
-            <li><a href="/areas/al-saadah.html">— Al Sa’adah Complex</a></li>
-            <li><a href="/areas/biodiversity.html">— Biodiversity Parks</a></li>
-            <li><a href="/areas/main-camp.html">— Other Facilities</a></li>
           </ul>
         </li>
         <li class="has-sub">
           <a class="active" href="/categories.html">Categories</a>
           <ul class="submenu">
+            <li><a href="/categories.html#beach">Beach</a></li>
+            <li><a href="/categories.html#biodiversity">Biodiversity</a></li>
             <li><a href="/categories.html#fitness">Fitness</a></li>
+            <li><a href="/categories.html#f-halls">Function halls</a></li>
             <li><a href="/categories.html#sports">Sports</a></li>
             <li><a href="/categories.html#parks">Parks</a></li>
             <li><a href="/categories.html#aquatics">Aquatics</a></li>
