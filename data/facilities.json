@@ -17,9 +17,11 @@
     "lat": "25.954939",
     "lng": "49.676877",
     "photo": "/images/abqaiq-nature-reserve/cover.jpg",
-    "photos": ["/images/abqaiq-nature-reserve/cover.jpg",
+    "photos": [
+      "/images/abqaiq-nature-reserve/cover.jpg",
       "/images/abqaiq-nature-reserve/gallery-1.jpg",
-      "/images/abqaiq-nature-reserve/gallery-2.jpg"],
+      "/images/abqaiq-nature-reserve/gallery-2.jpg"
+    ],
     "amenities": ["Parking", "Binocular"]
   },
   {
@@ -41,12 +43,12 @@
     "lng": "49.675545",
     "photo": "/images/facilities/abqaiqs-heaven/cover.jpg",
     "photos": [
-    "/images/facilities/abqaiqs-heaven/cover.jpg",
-    "/images/facilities/abqaiqs-heaven/gallery-1.jpg"
-  ]
+      "/images/facilities/abqaiqs-heaven/cover.jpg",
+      "/images/facilities/abqaiqs-heaven/gallery-1.jpg"
+    ],
     "amenities": []
-  },  
-   {
+  },
+  {
     "id": "abqaiq-walk",
     "area": "others",
     "name": "Abqaiq WALK",
@@ -62,12 +64,13 @@
     "lat": "",
     "lng": "",
     "photo": "/images/facilities/abqaiq-walk/cover.jpg",
-    "photos": ["/images/facilities/abqaiq-walk/cover.jpg"    
-    "/images/facilities/abqaiqs-heaven/gallery-1.jpg"
-  ],
+    "photos": [
+      "/images/facilities/abqaiq-walk/cover.jpg",
+      "/images/facilities/abqaiqs-heaven/gallery-1.jpg"
+    ],
     "amenities": []
   },
-   {
+  {
     "id": "aerobic-and-spinning-room",
     "area": "main-camp",
     "name": "Aerobics and Spinning Room",
@@ -138,7 +141,7 @@
     "lng": "49.672121",
     "photo": "/images/placeholders/card.jpg",
     "photos": [
-    "/images/placeholders/card.jpg"
+      "/images/placeholders/card.jpg"
     ],
     "amenities": ["Work Station", "Wifi", "e-Book Library"]
   },
@@ -161,8 +164,8 @@
     "lng": "49.667493",
     "photo": "/images/placeholders/card.jpg",
     "photos": [
-    "/images/placeholders/card.jpg"
-  ],
+      "/images/placeholders/card.jpg"
+    ],
     "amenities": ["Racquet & Balls during tournament"]
   },
   {
@@ -186,8 +189,8 @@
     "lng": "49.668028",
     "photo": "/images/placeholders/card.jpg",
     "photos": [
-    "/images/placeholders/card.jpg"
-  ],
+      "/images/placeholders/card.jpg"
+    ],
     "amenities": []
   },
   {
@@ -209,8 +212,8 @@
     "lng": "49.672272",
     "photo": "/images/placeholders/card.jpg",
     "photos": [
-    "/images/placeholders/card.jpg"
-  ],
+      "/images/placeholders/card.jpg"
+    ],
     "amenities": []
   },
   {
@@ -347,9 +350,9 @@
     "lng": "49.669969",
     "photo": "/images/facilities/al-saadah-padel-court/cover.jpg",
     "photos": [
-    "/images/facilities/al-saadah-padel-court/cover.jpg",
-    "/images/facilities/al-saadah-padel-court/gallery-1.jpg"
-  ]
+      "/images/facilities/al-saadah-padel-court/cover.jpg",
+      "/images/facilities/al-saadah-padel-court/gallery-1.jpg"
+    ],
     "amenities": []
   },
   {
@@ -394,9 +397,9 @@
     "lng": "49.670972",
     "photo": "/images/placeholders/card.jpg",
     "photos": [
-    "/images/placeholders/card.jpg"
-  ],
-    "amenities": ["Lifeguard", "Towel", "Shower" ]
+      "/images/placeholders/card.jpg"
+    ],
+    "amenities": ["Lifeguard", "Towel", "Shower"]
   },
   {
     "id": "al-saadah-tennis-court",
@@ -416,8 +419,8 @@
     "lng": "49.670355",
     "photo": "/images/placeholders/card.jpg",
     "photos": [
-    "/images/placeholders/card.jpg"
-  ],
+      "/images/placeholders/card.jpg"
+    ],
     "amenities": []
   },
   {
@@ -437,11 +440,11 @@
     "address": "10th Street, Main Camp, Abqaiq, Saudi Aramco",
     "lat": "25.951482",
     "lng": "49.674779",
-   "photo": "/images/facilities/cricket-field-main-camp/cover.jpg",
+    "photo": "/images/facilities/cricket-field-main-camp/cover.jpg",
     "photos": [
-    "/images/facilities/cricket-field-main-camp/cover.jpg",
-    "/images/facilities/cricket-field-main-camp/gallery-1.jpg"
-  ]
+      "/images/facilities/cricket-field-main-camp/cover.jpg",
+      "/images/facilities/cricket-field-main-camp/gallery-1.jpg"
+    ],
     "amenities": []
   },
   {
@@ -464,9 +467,9 @@
     "lng": "49.670068",
     "photo": "/images/facilities/deer-park/cover.jpg",
     "photos": [
-    "/images/facilities/deer-park/cover.jpg",
-    "/images/facilities/deer-park/gallery-1.jpg"
-  ]
+      "/images/facilities/deer-park/cover.jpg",
+      "/images/facilities/deer-park/gallery-1.jpg"
+    ],
     "amenities": []
   },
   {
@@ -532,12 +535,11 @@
     "address": "10th Street, Main Camp, Abqaiq, Saudi Aramco",
     "lat": "25.956752",
     "lng": "49.678236",
-    "id": "horse-stables",
     "photo": "/images/facilities/horse-stables/cover.jpg",
     "photos": [
-    "/images/facilities/horse-stables/cover.jpg",
-    "/images/facilities/horse-stables/gallery-1.jpg"
-  ]
+      "/images/facilities/horse-stables/cover.jpg",
+      "/images/facilities/horse-stables/gallery-1.jpg"
+    ],
     "amenities": []
   },
   {
@@ -558,12 +560,11 @@
     "address": "17th Street, Main Camp, Abqaiq, Saudi Aramco",
     "lat": "25.944897",
     "lng": "49.674388",
-    "id": "khuzama-park",
     "photo": "/images/facilities/khuzama-park/cover.jpg",
     "photos": [
-    "/images/facilities/khuzama-park/cover.jpg",
-    "/images/facilities/khuzama-park/gallery-1.jpg"
-  ]
+      "/images/facilities/khuzama-park/cover.jpg",
+      "/images/facilities/khuzama-park/gallery-1.jpg"
+    ],
     "amenities": ["Parking", "Toilet", "Seating Area", "Splash"]
   },
   {
@@ -585,10 +586,10 @@
     "lng": "49.665429",
     "photo": "/images/facilities/main-camp-winter-tent/cover.jpg",
     "photos": [
-    "/images/facilities/main-camp-winter-tent/cover.jpg",
-    "/images/facilities/main-camp-winter-tent/gallery-1.jpg"
-  ]
-    "amenities": ["Tent", "Cozy Seating", "Bonfire", "Shaded Seating" ]
+      "/images/facilities/main-camp-winter-tent/cover.jpg",
+      "/images/facilities/main-camp-winter-tent/gallery-1.jpg"
+    ],
+    "amenities": ["Tent", "Cozy Seating", "Bonfire", "Shaded Seating"]
   },
   {
     "id": "oasis-crossfit-studio",
@@ -596,7 +597,7 @@
     "name": "Oasis CrossFit Studio",
     "category": "Fitness",
     "status": "Operating",
-    "operating_days": "5 days (Sun-Thu",
+    "operating_days": "5 days (Sun-Thu)",
     "open_time": "7:00 AM",
     "close_time": "6:00 PM",
     "operation_type": "Full Year",
@@ -609,9 +610,9 @@
     "lng": "49.674778",
     "photo": "/images/facilities/oasis-crossfit-studio/cover.jpg",
     "photos": [
-    "/images/facilities/oasis-crossfit-studio/cover.jpg",
-    "/images/facilities/oasis-crossfit-studio/gallery-1.jpg"
-  ]
+      "/images/facilities/oasis-crossfit-studio/cover.jpg",
+      "/images/facilities/oasis-crossfit-studio/gallery-1.jpg"
+    ],
     "amenities": []
   },
   {
@@ -633,9 +634,9 @@
     "lng": "49.675135",
     "photo": "/images/facilities/oasis-games-hub/cover.jpg",
     "photos": [
-    "/images/facilities/oasis-games-hub/cover.jpg",
-    "/images/facilities/oasis-games-hub/gallery-1.jpg"
-  ]
+      "/images/facilities/oasis-games-hub/cover.jpg",
+      "/images/facilities/oasis-games-hub/gallery-1.jpg"
+    ],
     "amenities": []
   },
   {
@@ -657,9 +658,9 @@
     "lng": "49.675688",
     "photo": "/images/facilities/oasis-kids-hub/cover.jpg",
     "photos": [
-    "/images/facilities/oasis-kids-hub/cover.jpg",
-    "/images/facilities/oasis-kids-hub/gallery-1.jpg"
-  ]
+      "/images/facilities/oasis-kids-hub/cover.jpg",
+      "/images/facilities/oasis-kids-hub/gallery-1.jpg"
+    ],
     "amenities": []
   },
   {
@@ -681,9 +682,9 @@
     "lng": "49.675611",
     "photo": "/images/facilities/oasis-ladies-gym/cover.jpg",
     "photos": [
-    "/images/facilities/oasis-ladies-gym/cover.jpg",
-    "/images/facilities/oasis-ladies-gym/gallery-1.jpg"
-  ]
+      "/images/facilities/oasis-ladies-gym/cover.jpg",
+      "/images/facilities/oasis-ladies-gym/gallery-1.jpg"
+    ],
     "amenities": []
   },
   {
@@ -705,9 +706,9 @@
     "lng": "49.675629",
     "photo": "/images/facilities/oasis-ladies-swimming-pool/cover.jpg",
     "photos": [
-    "/images/facilities/oasis-ladies-swimming-pool/cover.jpg",
-    "/images/facilities/oasis-ladies-swimming-pool/gallery-1.jpg"
-  ]
+      "/images/facilities/oasis-ladies-swimming-pool/cover.jpg",
+      "/images/facilities/oasis-ladies-swimming-pool/gallery-1.jpg"
+    ],
     "amenities": []
   },
   {
@@ -729,9 +730,9 @@
     "lng": "49.674778",
     "photo": "/images/facilities/oasis-lounge/cover.jpg",
     "photos": [
-    "/images/facilities/oasis-lounge/cover.jpg",
-    "/images/facilities/oasis-lounge/gallery-1.jpg"
-  ]
+      "/images/facilities/oasis-lounge/cover.jpg",
+      "/images/facilities/oasis-lounge/gallery-1.jpg"
+    ],
     "amenities": []
   },
   {
@@ -753,9 +754,9 @@
     "lng": "49.674204",
     "photo": "/images/facilities/oasis-tennis-court/cover.jpg",
     "photos": [
-    "/images/facilities/oasis-tennis-court/cover.jpg",
-    "/images/facilities/oasis-tennis-court/gallery-1.jpg"
-  ]
+      "/images/facilities/oasis-tennis-court/cover.jpg",
+      "/images/facilities/oasis-tennis-court/gallery-1.jpg"
+    ],
     "amenities": []
   },
   {
@@ -777,9 +778,9 @@
     "lng": "50.102292",
     "photo": "/images/facilities/qurayyah-beach/cover.jpg",
     "photos": [
-    "/images/facilities/qurayyah-beach/cover.jpg",
-    "/images/facilities/qurayyah-beach/gallery-1.jpg"
-  ] 
+      "/images/facilities/qurayyah-beach/cover.jpg",
+      "/images/facilities/qurayyah-beach/gallery-1.jpg"
+    ],
     "amenities": ["Shade", "BBQ Place", "Grocery Shop", "Padel", "Soccer"]
   },
   {
@@ -801,9 +802,9 @@
     "lng": "49.672707",
     "photo": "/images/facilities/shamal-soccer-field/cover.jpg",
     "photos": [
-    "/images/facilities/shamal-soccer-field/cover.jpg",
-    "/images/facilities/shamal-soccer-field/gallery-1.jpg"
-  ]
+      "/images/facilities/shamal-soccer-field/cover.jpg",
+      "/images/facilities/shamal-soccer-field/gallery-1.jpg"
+    ],
     "amenities": ["Parking", "Toilet", "Seating Area"]
   },
   {
@@ -825,9 +826,9 @@
     "lng": "50.15682",
     "photo": "/images/facilities/uqair-beach/cover.jpg",
     "photos": [
-    "/images/facilities/uqair-beach/cover.jpg",
-    "/images/facilities/uqair-beach/gallery-1.jpg"
-  ]
+      "/images/facilities/uqair-beach/cover.jpg",
+      "/images/facilities/uqair-beach/gallery-1.jpg"
+    ],
     "amenities": ["Shade", "BBQ Place", "Grocery Shop", "Padel", "Soccer"]
   }
 ]
