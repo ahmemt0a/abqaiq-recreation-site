@@ -1,26 +1,3 @@
-async function loadFacilities() {
-  const container = document.querySelector('#facilities-container'); // or wherever your list goes
-  try {
-    const response = await fetch('/data/facilities.json');
-    if (!response.ok) throw new Error('Network response was not ok');
-    
-    const data = await response.json();
-    renderFacilities(data); // This function would build your HTML cards
-  } catch (error) {
-    console.error('Fetch error:', error);
-    if (container) {
-      container.innerHTML = `<p class="error">Could not load facilities data. Please try again later.</p>`;
-    }
-  }
-}
-/* ==========================================================================
-   Abqaiq Recreation — area.js (Full Rebuild)
-   Renders facility cards on area pages from /data/facilities.json.
-   Expects:
-     <section id="facilityGrid" class="facility-grid" data-area="<slug>"></section>
-   Filter chips (optional):
-     <button class="chip" data-filter="Sports">Sports</button> ...
-   ========================================================================== */
 (function () {
   "use strict";
 
@@ -29,57 +6,75 @@ async function loadFacilities() {
 
   const areaSlug = (grid.getAttribute('data-area') || '').toLowerCase();
   const filtersEl = document.querySelector('.filters');
-  let ALL = [];
+  let ALL_FACILITIES = [];
 
-  // Render list -> cards
+  // Function to build the HTML for each card
   function render(list) {
     if (!list || !list.length) {
-      grid.innerHTML = '<p style="padding:12px">No facilities found for this section.</p>';
+      grid.innerHTML = '<p style="padding:20px; text-align:center;">No facilities found for this section.</p>';
       return;
     }
+
     grid.innerHTML = list.map(item => {
       const url = `/facility.html?id=${encodeURIComponent(item.id)}`;
       const img = item.photo || '/images/placeholders/card.jpg';
-      const cat = item.category || '';
-      const st  = item.status || '';
+      const cat = item.category || 'General';
+      const status = item.status || 'Available';
       const name = item.name || 'Facility';
+
       return `
         <article class="card">
           <a href="${url}" aria-label="${name}">
             <img src="${img}" alt="${name}" loading="lazy" />
           </a>
           <div class="card-body">
+            <span class="category-tag">${cat}</span>
             <h3><a href="${url}">${name}</a></h3>
-            <div class="meta"><span>${cat}</span><span>${st}</span></div>
+            <div class="meta"><span>${status}</span></div>
           </div>
         </article>`;
     }).join('');
   }
 
-  // Initial load
-  (async function load() {
+  // Load the JSON data
+  async function loadData() {
     try {
-      const res = await fetch('/data/facilities.json', { cache: 'no-store' });
+      // Use './' to ensure it looks in the correct local directory
+      const res = await fetch('./data/facilities.json');
+      
+      if (!res.ok) throw new Error('Could not find facilities.json');
+      
       const data = await res.json();
 
-      // Keep only this area's facilities
-      ALL = data.filter(d => (d.area || '').toLowerCase() === areaSlug);
+      // Filter data to only show facilities for the current page (area)
+      ALL_FACILITIES = data.filter(item => 
+        (item.area || '').toLowerCase() === areaSlug
+      );
 
-      // Initial render
-      render(ALL);
+      render(ALL_FACILITIES);
 
-      // Wire chips (by category)
+      // Listen for filter chip clicks from main.js
       if (filtersEl) {
         filtersEl.addEventListener('chip:change', (ev) => {
-          const val = (ev.detail && ev.detail.value) || 'all';
-          if (val.toLowerCase() === 'all') return render(ALL);
-          const filtered = ALL.filter(i => (i.category || '').toLowerCase() === val.toLowerCase());
-          render(filtered);
+          const val = ev.detail.value.toLowerCase();
+          if (val === 'all') {
+            render(ALL_FACILITIES);
+          } else {
+            const filtered = ALL_FACILITIES.filter(i => 
+              (i.category || '').toLowerCase() === val
+            );
+            render(filtered);
+          }
         });
       }
     } catch (e) {
-      console.error('[Area] Failed to load facilities.json', e);
-      grid.innerHTML = '<p style="padding:12px">Could not load facilities data.</p>';
+      console.error('[Area Error]', e);
+      grid.innerHTML = `<div style="background:#fff3cd; padding:20px; border-radius:8px;">
+        <strong>Error:</strong> Could not load facilities data. <br>
+        <small>Tip: Make sure you are using "Live Server" in VS Code.</small>
+      </div>`;
     }
-  })();
+  }
+
+  loadData();
 })();
