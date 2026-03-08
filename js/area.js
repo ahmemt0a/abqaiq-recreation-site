@@ -40,7 +40,7 @@
   async function loadData() {
     try {
       // Use './' to ensure it looks in the correct local directory
-      const res = await fetch('./data/facilities.json');
+      const res = await fetch('data/facilities.json');
       
       if (!res.ok) throw new Error('Could not find facilities.json');
       
