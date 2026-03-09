@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Facility — Abqaiq Recreation</title>
-  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="stylesheet" href="css/styles.css" />
   <style>
     .breadcrumb { font-size:.95rem; margin:14px 0; color:#475569; }
     .breadcrumb a { color:#0ea5e9; text-decoration:none; }
@@ -113,7 +113,7 @@
 
         let data=[];
         try{
-          const res = await fetch('/data/facilities.json', { cache: 'no-store' });
+          const res = await fetch('data/facilities.json', { cache: 'no-store' });
           data = await res.json();
         } catch(e){
           console.error('[Facility] Failed to load data', e); return;
@@ -195,6 +195,6 @@
       run();
     })();
   </script>
-  <script src="/js/main.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
