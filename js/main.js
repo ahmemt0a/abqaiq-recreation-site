@@ -6,31 +6,31 @@
   const qsa = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
   const on  = (el, evt, fn, opt) => el && el.addEventListener(evt, fn, opt);
 
-  // --- 1. Load Components (Header/Footer) ---
-  async function initSite() {
-    try {
-      // Load Header (Removed leading slash for GitHub)
-      const headerRes = await fetch('components/header-content.html');
-      if (headerRes.ok) {
-        const headerPlaceholder = qs('#header-placeholder');
-        if (headerPlaceholder) {
-          headerPlaceholder.innerHTML = await headerRes.text();
-          setupMobileNav(); // Initialize nav AFTER header is in the DOM
-        }
+// --- 1. Load Components (Header/Footer) ---
+async function initSite() {
+  try {
+    // FIXED: Removed the "/" before "components"
+    const headerRes = await fetch('components/header-content.html'); 
+    if (headerRes.ok) {
+      const headerPlaceholder = qs('#header-placeholder');
+      if (headerPlaceholder) {
+        headerPlaceholder.innerHTML = await headerRes.text();
+        setupMobileNav(); 
       }
-
-      // Load Footer (Removed leading slash for GitHub)
-      const footerRes = await fetch('components/footer-content.html');
-      if (footerRes.ok) {
-        const footerPlaceholder = qs('#footer-placeholder');
-        if (footerPlaceholder) {
-          footerPlaceholder.innerHTML = await footerRes.text();
-        }
-      }
-    } catch (err) {
-      console.error("Component loading failed. Ensure folder paths are correct.", err);
     }
+
+    // FIXED: Removed the "/" before "components"
+    const footerRes = await fetch('components/footer-content.html');
+    if (footerRes.ok) {
+      const footerPlaceholder = qs('#footer-placeholder');
+      if (footerPlaceholder) {
+        footerPlaceholder.innerHTML = await footerRes.text();
+      }
+    }
+  } catch (err) {
+    console.error("Component loading failed.", err);
   }
+}
 
   // --- 2. Mobile Navigation Logic ---
   function setupMobileNav() {
