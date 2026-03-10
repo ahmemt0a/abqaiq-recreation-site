@@ -65,7 +65,7 @@
         <p id="facilityAddress">—</p>
         <p><span id="facilityLat">—</span>, <span id="facilityLng">—</span></p>
         <div class="map-embed" id="mapEmbed" aria-label="Google Map embed" style="margin: 10px 0 16px;"></div>
-        <p><a class="btn-pill" id="backToArea" href="/areas.html">← Back to Area</a></p>
+        <p><a class="btn-pill" id="backToArea" href="areas.html">← Back to Area</a></p>
       </section>
 
       <section class="facility-gallery" style="padding:0 16px 16px;">
@@ -98,13 +98,13 @@
       function setHref(id, href, text){ const n=document.getElementById(id); if(n && href){ n.href = href; if (text) n.textContent = text; } }
 
       const areaLabelMap = {
-        "oasis":         { primary: "Abqaiq Main Camp", secondary: "Oasis Complex", back: "/areas/oasis.html" },
-        "al-saadah":     { primary: "Abqaiq Main Camp", secondary: "Al Sa’adah Complex", back: "/areas/al-saadah.html" },
-        "biodiversity":  { primary: "Abqaiq Main Camp", secondary: "Biodiversity Parks", back: "/areas/biodiversity.html" },
-        "others":        { primary: "Abqaiq Main Camp", secondary: "Other Facilities", back: "/areas/main-camp.html" },
-        "al-farhah":     { primary: null,               secondary: "Al Farhah Bachelor Camp", back: "/areas/al-farhah.html" },
-        "beaches":       { primary: null,               secondary: "Beaches", back: "/areas/beaches.html" },
-        "main-camp":     { primary: "Abqaiq Main Camp", secondary: "", back: "/areas/main-camp.html" }
+        "oasis":         { primary: "Abqaiq Main Camp", secondary: "Oasis Complex", back: "areas/oasis.html" },
+        "al-saadah":     { primary: "Abqaiq Main Camp", secondary: "Al Sa’adah Complex", back: "areas/al-saadah.html" },
+        "biodiversity":  { primary: "Abqaiq Main Camp", secondary: "Biodiversity Parks", back: "areas/biodiversity.html" },
+        "others":        { primary: "Abqaiq Main Camp", secondary: "Other Facilities", back: "areas/main-camp.html" },
+        "al-farhah":     { primary: null,               secondary: "Al Farhah Bachelor Camp", back: "areas/al-farhah.html" },
+        "beaches":       { primary: null,               secondary: "Beaches", back: "areas/beaches.html" },
+        "main-camp":     { primary: "Abqaiq Main Camp", secondary: "", back: "areas/main-camp.html" }
       };
 
       async function run(){
@@ -171,14 +171,14 @@
         }
 
         // Breadcrumb (Option A)
-        const meta = areaLabelMap[(f.area || '').toLowerCase()] || { primary:null, secondary:'', back:'/areas.html' };
+        const meta = areaLabelMap[(f.area || '').toLowerCase()] || { primary:null, secondary:'', back:'areas.html' };
         const bcPrimary = document.getElementById('bcPrimary');
         const bcSecondary = document.getElementById('bcSecondary');
         const bcFacility = document.getElementById('bcFacility');
 
         // Build compact breadcrumb
         if (meta.primary){
-          bcPrimary.innerHTML   = `<a href="/areas.html">${meta.primary}</a>`;
+          bcPrimary.innerHTML   = `<a href="areas.html">${meta.primary}</a>`;
           bcSecondary.innerHTML = `<a href="${meta.back}">${meta.secondary}</a>`;
         } else {
           bcPrimary.textContent = ''; // hide primary separator visually if empty
